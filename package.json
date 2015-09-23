@@ -1,0 +1,45 @@
+{
+  "name": "donation-pledge",
+  "description": "My donation pledge",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/golmansax/donation-pledge.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-config-golmansax": "*",
+    "eslint-plugin-react": "*",
+    "http-proxy": "*",
+    "mocha": "*",
+    "react-hot-loader": "*",
+    "travis-lint": "*",
+    "webpack-dev-server": "*"
+  },
+  "dependencies": {
+    "babel": "*",
+    "babel-loader": "*",
+    "babel-runtime": "*",
+    "classnames": "*",
+    "css-loader": "*",
+    "express": "*",
+    "extract-text-webpack-plugin": "*",
+    "file-loader": "*",
+    "jeet": "*",
+    "nib": "*",
+    "react": "*",
+    "style-loader": "*",
+    "stylus-loader": "*",
+    "stylus-type-utils": "*",
+    "url-loader": "*",
+    "webpack": "*"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon --watch server/",
+    "watch": "./node_modules/.bin/webpack-dev-server --content-base public/build --progress --colors"
+  }
+}
