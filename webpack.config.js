@@ -9,7 +9,7 @@ var stylusTypeUtils = require('stylus-type-utils');
 module.exports = {
   context: __dirname,
   entry: {
-    home_page: './client/home_page/index.js'
+    home_page: './client/home_page/webpack.js',
   },
 
   output: {
