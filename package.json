@@ -28,6 +28,7 @@
     "express": "*",
     "extract-text-webpack-plugin": "*",
     "file-loader": "*",
+    "image-webpack-loader": "*",
     "jeet": "*",
     "nib": "*",
     "react": "*",
@@ -38,8 +39,7 @@
     "webpack": "*"
   },
   "scripts": {
-    "start": "node index.js",
-    "start-dev": "nodemon",
-    "watch": "./node_modules/.bin/webpack-dev-server --content-base public/build --progress --colors"
+    "start": "nodemon",
+    "postinstall": "make build"
   }
 }

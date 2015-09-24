@@ -7,8 +7,8 @@ export default class DonationList extends React.Component {
     );
   }
 
-  _renderDonation(donation) {
-    return <div>{donation.year}</div>;
+  _renderDonation(donation, index) {
+    return <div key={index}>{donation.year}</div>;
   }
 }
 

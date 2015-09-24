@@ -1,20 +1,13 @@
 import express from 'express';
+import path from 'path';
 import React from 'react';
-import HomePage from '../client/home_page';
+import HomePage from './build/home_page';
 
 const env = process.env.NODE_ENV || 'development';
 const server = express();
 
-if (env === 'development') {
-  const httpProxy = require('http-proxy');
-  const proxy = httpProxy.createProxyServer();
+server.use(express.static(path.resolve(__dirname, '..', 'public')));
 
-  server.all('/build/*', (req, res) => {
-    proxy.web(req, res, { target: 'http://localhost:8080' });
-  });
-}
-
-server.use(express.static(__dirname + '/public'));
 server.get('/', (req, res) => {
   const html = '<!DOCTYPE html>' + React.renderToStaticMarkup(<HomePage/>);
   res.send(html);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../layout';
 import DonationList from '../donation/list';
+import './index.styl';
 
 const DONATIONS = [
   {
