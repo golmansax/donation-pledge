@@ -2,7 +2,6 @@
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
-var fs = require('fs');
 var jeet = require('jeet');
 var nib = require('nib');
 var stylusTypeUtils = require('stylus-type-utils');
@@ -56,8 +55,8 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        ]
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+        ],
       },
     ],
   },
