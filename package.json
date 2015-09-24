@@ -39,7 +39,7 @@
     "webpack": "*"
   },
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon --watch server --watch node_modules",
     "postinstall": "make build"
   }
 }

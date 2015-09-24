@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../layout';
 import DonationList from '../donation/list';
-import './index.styl';
+import styles from './index.styl';
+import { H1 } from '../components';
 
 const DONATIONS = [
   {
@@ -37,8 +38,12 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <Layout title='Donation Pledge' name='home_page'>
-        <h1>Commit yourself to donating to organizations every year</h1>
-        <button>Make a pledge!</button>
+        <div className={styles.mainContainer}>
+          <H1 className={styles.mainHeading}>
+            Commit yourself to donating to organizations every year
+          </H1>
+          <button>Make a pledge!</button>
+        </div>
 
         <h2>My pledge</h2>
         <p>
