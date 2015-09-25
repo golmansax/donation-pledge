@@ -11,3 +11,6 @@ production:
 
 watch:
 	./node_modules/.bin/webpack -w --progress --colors
+
+stylint:
+	./node_modules/.bin/stylint client
