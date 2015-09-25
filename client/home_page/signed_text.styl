@@ -1,0 +1,24 @@
+@require '../styles/colors'
+
+.rootElement {
+  position relative
+  padding 0 .5em
+  margin 0 .5em
+  border-bottom em(1px) dotted black
+}
+
+.text {
+  font-family 'Pacifico'
+  font-size 1.25em
+  color $purple
+}
+
+.category {
+  composes mainHeader from '!stylus!../components/heading/index.styl'
+
+  position absolute
+  left 0
+  width 100%
+  top 1.25em
+  text-align center
+}

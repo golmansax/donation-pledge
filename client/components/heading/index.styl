@@ -1,4 +1,42 @@
+@require '../../styles/fonts'
+
+$heading-scale = 1.5
+$h4-size = 1em
+$h3-size = $h4-size * $heading-scale
+$h2-size = $h3-size * $heading-scale
+$h1-size = $h2-size * $heading-scale
+
 .rootElement {
+  line-height 1.2
+}
+
+.mainHeader {
+  composes rootElement
+  font-family: $heading-font-family;
   font-weight: 700;
-  font-size: 4em;
+  text-transform: uppercase;
+}
+
+.h1 {
+  composes mainHeader
+  font-size: $h1-size
+}
+
+.h2 {
+  composes mainHeader
+  font-size: $h2-size;
+  text-transform: uppercase;
+}
+
+.h3 {
+  composes mainHeader
+  font-size: $h3-size;
+  text-transform: uppercase;
+}
+
+.h4 {
+  composes rootElement
+  font-size: $h3-size;
+  font-weight: 400;
+  font-family $text-font-family
 }

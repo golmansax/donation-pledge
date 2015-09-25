@@ -15,7 +15,17 @@ export default class Layout extends React.Component {
           <link
             type='text/css'
             rel='stylesheet'
-            href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic'
+            href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic'
+          />
+          <link
+            type='text/css'
+            rel='stylesheet'
+            href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic'
+          />
+          <link
+            type='text/css'
+            rel='stylesheet'
+            href='http://fonts.googleapis.com/css?family=Pacifico:400,700,400italic'
           />
           <link
             rel='stylesheet'

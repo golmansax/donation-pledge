@@ -1,8 +1,9 @@
 import React from 'react';
 import Layout from '../layout';
 import DonationList from '../donation/list';
+import { Button, Container, H1, H2, H4 } from '../components';
+import SignedText from './signed_text';
 import styles from './index.styl';
-import { Button, Container, H1 } from '../components';
 
 const DONATIONS = [
   {
@@ -37,33 +38,39 @@ const DONATIONS = [
 export default class HomePage extends React.Component {
   render() {
     return (
-      <Layout title='Donation Pledge' name='home_page'>
+      <Layout title='My Impact Pledge' name='home_page'>
         <div className={styles.mainContainer}>
           <Container>
-            <H1 className={styles.mainHeading}>
-              Commit to making a recurring impact
-            </H1>
-            Get into the habit of doing good by making a pledge to donate
-            with regards to your own schedule
-            <div>
-              <Button>Make a pledge!</Button>
+            <div className={styles.mainHeading}>
+              <H2>
+                Pledge to make a
+              </H2>
+              <H1 className={styles.hugeHeading}>lasting impact</H1>
+            </div>
+            <H4>
+              Build a habit of supporting causes that mean the most to you
+            </H4>
+            <div style={{display: 'none'}}>
+              <Button>Count me in!</Button>
             </div>
           </Container>
         </div>
 
-        <Container>
-          <h2>My Pledge</h2>
+        <Container className={styles.section}>
+          <H2>My Pledge</H2>
           <p>
-            I pledge to donate to every
-            <strong> year on my birthday</strong>.
+            I pledge to
+            <SignedText text='donate to organizations' category='impact' />
+            every
+            <SignedText text='year on my birthday' category='time' />.
           </p>
 
-          <h2>My Donations</h2>
+          <H2>My Donations</H2>
           <DonationList donations={DONATIONS} />
         </Container>
 
         <Container>
-          <h2>Contact</h2>
+          <H2>Contact</H2>
         </Container>
       </Layout>
     );
