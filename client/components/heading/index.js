@@ -16,3 +16,11 @@ export default class Heading extends React.Component {
     );
   }
 }
+
+Heading.propTypes = {
+  className: React.PropTypes.string,
+  children: React.PropTypes.oneOfType([
+    React.PropTypes.element,
+    React.PropTypes.arrayOf(React.PropTypes.element),
+  ]).isRequired,
+};
