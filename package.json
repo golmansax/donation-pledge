@@ -23,6 +23,7 @@
   "dependencies": {
     "babel": "*",
     "babel-loader": "*",
+    "babel-plugin-object-assign": "*",
     "babel-runtime": "*",
     "classnames": "*",
     "css-loader": "*",

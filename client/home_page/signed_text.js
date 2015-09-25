@@ -11,3 +11,8 @@ export default class SignedText extends React.Component {
     );
   }
 }
+
+SignedText.propTypes = {
+  text: React.PropTypes.string.isRequired,
+  category: React.PropTypes.string.isRequired,
+};
