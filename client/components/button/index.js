@@ -1,27 +1,28 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './index.styl';
+import styles from './button.styl';
 
-export default class Heading extends React.Component {
+export default class Button extends React.Component {
   render() {
-    const myClassName = classNames({
-      [styles.rootElement]: true,
+    const myClass = classNames({
+      [styles[this.props.type]]: true,
       [this.props.className]: !!this.props.className,
     });
 
     return (
-      <div className={myClassName}>
-        {this.props.children}
-      </div>
+      <div className={myClass}>{this.props.children}</div>
     );
   }
 }
 
-Heading.propTypes = {
+Button.defaultProps = { type: 'main' };
+
+Button.propTypes = {
   className: React.PropTypes.string,
   children: React.PropTypes.oneOfType([
     React.PropTypes.element,
     React.PropTypes.string,
     React.PropTypes.arrayOf(React.PropTypes.element),
   ]).isRequired,
+  type: React.PropTypes.string,
 };

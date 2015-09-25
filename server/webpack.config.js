@@ -1,10 +1,11 @@
-/* eslint-disable no-var */
+/* eslint-disable no-var, max-len */
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var jeet = require('jeet');
 var nib = require('nib');
-var stylusTypeUtils = require('stylus-type-utils');
+var rupture = require('rupture');
+var s = require('stylus-type-utils');
 
 module.exports = {
   entry: {
@@ -31,7 +32,8 @@ module.exports = {
         test: /\.styl/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader?modules!stylus-loader?paths=node_modules'
+          'css-loader?modules&&localIdentName=[name]__[local]___[hash:base64:5]' +
+            '!stylus-loader?paths=node_modules'
         ),
       },
       {
@@ -66,7 +68,7 @@ module.exports = {
   ],
 
   stylus: {
-    use: [stylusTypeUtils(), jeet(), nib()],
+    use: [jeet(), nib(), rupture(), s()],
   },
 
 };

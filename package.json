@@ -32,6 +32,7 @@
     "jeet": "*",
     "nib": "*",
     "react": "*",
+    "rupture": "*",
     "style-loader": "*",
     "stylus-loader": "*",
     "stylus-type-utils": "*",

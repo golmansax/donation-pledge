@@ -1,23 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from './index.styl';
+import styles from './container.styl';
 
-export default class Heading extends React.Component {
+export default class Container extends React.Component {
   render() {
-    const myClassName = classNames({
+    const myClass = classNames({
       [styles.rootElement]: true,
       [this.props.className]: !!this.props.className,
     });
 
     return (
-      <div className={myClassName}>
-        {this.props.children}
-      </div>
+      <div className={myClass}>{this.props.children}</div>
     );
   }
 }
 
-Heading.propTypes = {
+Container.propTypes = {
   className: React.PropTypes.string,
   children: React.PropTypes.oneOfType([
     React.PropTypes.element,

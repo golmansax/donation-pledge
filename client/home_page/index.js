@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../layout';
 import DonationList from '../donation/list';
 import styles from './index.styl';
-import { H1 } from '../components';
+import { Button, Container, H1 } from '../components';
 
 const DONATIONS = [
   {
@@ -39,24 +39,32 @@ export default class HomePage extends React.Component {
     return (
       <Layout title='Donation Pledge' name='home_page'>
         <div className={styles.mainContainer}>
-          <H1 className={styles.mainHeading}>
-            Commit yourself to donating to organizations every year
-          </H1>
-          <button>Make a pledge!</button>
+          <Container>
+            <H1 className={styles.mainHeading}>
+              Commit to making a recurring impact
+            </H1>
+            Get into the habit of doing good by making a pledge to donate
+            with regards to your own schedule
+            <div>
+              <Button>Make a pledge!</Button>
+            </div>
+          </Container>
         </div>
 
-        <h2>My pledge</h2>
-        <p>
-          After obtaining my undergraduate degree, I made a pledge to donate
-          money every year on my birthday, to support organizations that I feel
-          are making a positive impact. All of the organizations
-          that I have chosen so far are ones that have impacted me directly.
-          This is my way of saying thanks!
-        </p>
+        <Container>
+          <h2>My Pledge</h2>
+          <p>
+            I pledge to donate to every
+            <strong> year on my birthday</strong>.
+          </p>
 
-        <h2>My donations</h2>
-        <DonationList donations={DONATIONS} />
-        <h2>Contact</h2>
+          <h2>My Donations</h2>
+          <DonationList donations={DONATIONS} />
+        </Container>
+
+        <Container>
+          <h2>Contact</h2>
+        </Container>
       </Layout>
     );
   }

@@ -1,0 +1,12 @@
+@require jeet
+
+$container-width = em(900px)
+
+.rootElement {
+  center($container-width, 1em)
+
+  +tablet() {
+    padding-left 2rem
+    padding-right 2rem
+  }
+}
