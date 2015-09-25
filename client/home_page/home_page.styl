@@ -1,0 +1,41 @@
+@require '../styles/colors'
+@require '../layout/index'
+
+.mainContainer {
+  background url(./main_bg.jpg) no-repeat 0 -10em
+  background-size 100%
+  height 25em
+}
+
+.mainHeading {
+  padding .5em .25em 0
+  border-left .1em solid $purple
+}
+
+.headingEmphasis {
+  font-size 3em
+  line-height .8
+  margin-bottom .05em
+  color $purple
+}
+
+.section {
+  padding 2rem 0
+}
+
+.sectionHeading {
+  margin-bottom .5em
+}
+
+.missionSection {
+  composes section
+  background $purple
+  color $white
+  font-size 1.5em
+}
+
+.contactSection {
+  composes section
+  background $darkGray
+  color $white
+}

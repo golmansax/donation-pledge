@@ -2,7 +2,17 @@
 @require '../styles/fonts'
 
 body {
+  background-color $superLightGray
   font-family $textFontFamily
   color $darkGray
   line-height 1.5
+}
+
+a {
+  color $blue
+  transition color 300ms ease-out
+
+  &:hover {
+    color darken($blue, 30%)
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './list.styl';
 
 export default class DonationList extends React.Component {
   render() {
@@ -9,9 +10,12 @@ export default class DonationList extends React.Component {
 
   _renderDonation(donation, index) {
     return (
-      <div key={index}>
+      <div className={styles.listItem} key={index}>
         {donation.year} -
-        <a href={donation.organization.url}> {donation.organization.text}</a>
+        <span className={styles.action}>Donated</span>
+        &nbsp;to
+        <a href={donation.organization.url}>{donation.organization.text}</a>
+        <div>{donation.reason}</div>
       </div>
     );
   }
