@@ -11,7 +11,7 @@ const DONATIONS = [
       url: 'http://www.mbhsmagnet.org/',
       text: 'Montgomery County ARML Team',
     },
-    reason: 'for having an awesome field trip',
+    reason: 'for having an awesome field trip every year',
   },
   {
     year: 2014,
@@ -19,7 +19,7 @@ const DONATIONS = [
       url: 'https://www.hopechineseschool.org/hcscp/',
       text: 'Hope Chinese School College Park Campus',
     },
-    reason: 'helping me learn Chinese',
+    reason: 'for helping me learn Chinese',
   },
   {
     year: 2013,
@@ -27,7 +27,7 @@ const DONATIONS = [
       url: 'http://www.asia.si.edu/events/imaginasia.asp',
       text: 'Smithsonian ImaginAsia Family Program',
     },
-    reason: 'volunteeering',
+    reason: 'for being an awesome free program for kids',
   },
 ];
 
