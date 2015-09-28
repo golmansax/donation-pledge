@@ -1,4 +1,5 @@
 import React from 'react';
+import { H3 } from '../components';
 import styles from './signed_text.styl';
 
 export default class SignedText extends React.Component {
@@ -6,7 +7,7 @@ export default class SignedText extends React.Component {
     return (
       <span className={styles.rootElement}>
         <span className={styles.text}>{this.props.text}</span>
-        <span className={styles.category}>{this.props.category}</span>
+        <H3 className={styles.category}>{this.props.category}</H3>
       </span>
     );
   }

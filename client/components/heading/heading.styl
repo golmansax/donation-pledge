@@ -4,7 +4,6 @@ $headingScale = 1.5
 $baseSize = 1em
 $large = $baseSize * $headingScale
 $xlarge = $large * $headingScale
-$huge = $xlarge * $headingScale
 
 .rootElement {
   line-height 1.2
@@ -17,26 +16,27 @@ $huge = $xlarge * $headingScale
   text-transform uppercase
 }
 
+.secondaryHeader {
+  composes rootElement
+  font-weight 700
+}
+
 .h1 {
   composes mainHeader
-  font-size $huge
+  font-size $xlarge
 }
 
 .h2 {
   composes mainHeader
-  font-size $xlarge
-  text-transform uppercase
+  font-size $large
 }
 
 .h3 {
   composes mainHeader
-  font-size $large
-  text-transform uppercase
+  font-size $baseSize
 }
 
 .h4 {
-  composes rootElement
-  font-size $large
-  font-weight 400
-  font-family $textFontFamily
+  composes secondaryHeader
+  font-size $baseSize
 }
