@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { H3 } from '../';
 import styles from './button.styl';
 
 export default class Button extends React.Component {
@@ -10,7 +11,9 @@ export default class Button extends React.Component {
     });
 
     return (
-      <div className={myClass}>{this.props.children}</div>
+      <button {...this.props} className={myClass}>
+        <H3>{this.props.children}</H3>
+      </button>
     );
   }
 }

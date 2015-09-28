@@ -5,7 +5,7 @@ var path = require('path');
 var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
-var s = require('stylus-type-utils');
+var stylusTypeUtils = require('stylus-type-utils');
 
 module.exports = {
   entry: {
@@ -68,7 +68,7 @@ module.exports = {
   ],
 
   stylus: {
-    use: [jeet(), nib(), rupture(), s()],
+    use: [jeet(), nib(), rupture(), stylusTypeUtils()],
   },
 
 };

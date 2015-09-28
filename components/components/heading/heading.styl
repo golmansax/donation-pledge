@@ -9,34 +9,34 @@ $xlarge = $large * $headingScale
   line-height 1.2
 }
 
-.mainHeader {
+.mainHeading {
   composes rootElement
   font-family $headingFontFamily
   font-weight 700
   text-transform uppercase
 }
 
-.secondaryHeader {
+.secondaryHeading {
   composes rootElement
   font-weight 700
 }
 
 .h1 {
-  composes mainHeader
+  composes mainHeading
   font-size $xlarge
 }
 
 .h2 {
-  composes mainHeader
+  composes mainHeading
   font-size $large
 }
 
 .h3 {
-  composes mainHeader
+  composes mainHeading
   font-size $baseSize
 }
 
 .h4 {
-  composes secondaryHeader
+  composes secondaryHeading
   font-size $baseSize
 }

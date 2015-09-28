@@ -35,7 +35,7 @@ export default class HomePage extends Component {
         <div className={styles.contactSection}>
           <Container>
             <H1 className={styles.sectionHeading}>Contact us</H1>
-            <ContactForm />
+            <div id='contact-form'><ContactForm /></div>
           </Container>
         </div>
       </Layout>

@@ -37,6 +37,7 @@ export default class Layout extends React.Component {
         </head>
         <body>
           {this.props.children}
+          <script type='text/javascript' src={`/client/${this.props.name}.js`} />
         </body>
       </html>
       /* eslint-enable max-len */
