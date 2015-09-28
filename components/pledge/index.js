@@ -1,6 +1,6 @@
 import React from 'react';
 import SignedText from './signed_text';
-import { H2 } from '../components';
+import { H2 } from '../shared';
 import DonationList from '../donation/list';
 import styles from './pledge.styl';
 

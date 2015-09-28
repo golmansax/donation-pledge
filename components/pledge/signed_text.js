@@ -1,5 +1,5 @@
 import React from 'react';
-import { H3 } from '../components';
+import { H3 } from '../shared';
 import styles from './signed_text.styl';
 
 export default class SignedText extends React.Component {

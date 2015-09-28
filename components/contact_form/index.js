@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, H3 } from '../components';
+import { Button, H3 } from '../shared';
 import styles from './contact_form.styl';
 
 export default class ContactForm extends React.Component {

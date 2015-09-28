@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../layout';
-import { Container, H1 } from '../components';
+import { Container, H1 } from '../shared';
 import Pledge from '../pledge';
 import ContactForm from '../contact_form';
 import styles from './home_page.styl';
