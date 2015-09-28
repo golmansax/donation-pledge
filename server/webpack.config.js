@@ -9,7 +9,7 @@ var s = require('stylus-type-utils');
 
 module.exports = {
   entry: {
-    home_page: './client/home_page/index.js',
+    home_page: './components/home_page/index.js',
   },
 
   output: {
