@@ -10,7 +10,7 @@ production:
 	node index.js
 
 watch:
-	./node_modules/.bin/webpack -w --progress --colors
+	./node_modules/.bin/webpack -w -d --progress --colors
 
 stylint:
 	./node_modules/.bin/stylint components
