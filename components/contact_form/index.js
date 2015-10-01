@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, H3 } from '../shared';
+import { create } from '../../flux/contact/actions';
 import styles from './contact_form.styl';
 
 export default class ContactForm extends React.Component {
@@ -42,7 +43,7 @@ export default class ContactForm extends React.Component {
             rows={4}
           />
         </div>
-        <Button onClick={this._checkState.bind(this)}>
+        <Button onClick={this._submitForm.bind(this)}>
           Send!
         </Button>
       </div>
@@ -53,7 +54,19 @@ export default class ContactForm extends React.Component {
     this.setState({ [attr]: event.target.value });
   }
 
-  _checkState(event) {
+  _submitForm(event) {
+    const errorMessage = this._validateState();
+
+    if (!errorMessage) {
+      alert(errorMessage);
+      event.preventDefault();
+      return;
+    }
+
+    create().then(() => alert('Contact form sent!'));
+  }
+
+  _validateState() {
     let message = null;
 
     if (!this.state.name) {
@@ -64,9 +77,6 @@ export default class ContactForm extends React.Component {
       message = 'Please fill out a comment';
     }
 
-    if (message) {
-      alert(message);
-      event.preventDefault();
-    }
+    return message;
   }
 }
