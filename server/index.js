@@ -6,8 +6,6 @@ import HomePage from '../webpack/build/home_page';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
 
-require('dotenv').load();
-
 const server = express();
 
 server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
