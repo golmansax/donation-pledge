@@ -1,7 +1,7 @@
 import React from 'react';
 import SignedText from './signed_text';
-import { H2 } from '../shared';
-import DonationList from '../donation/list';
+import { H2 } from '../../shared/components';
+import { DonationList } from '../../donation/components';
 import styles from './pledge.styl';
 
 const DONATIONS = [

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, H3 } from '../shared';
-import { create } from '../../flux/contact/actions';
-import styles from './contact_form.styl';
+import { Button, H3 } from '../../shared/components';
+import { create } from '../actions';
+import styles from './form.styl';
 
 export default class ContactForm extends React.Component {
   constructor(props) {

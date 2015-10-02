@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Layout from '../layout';
-import { Container, H1 } from '../shared';
-import Pledge from '../pledge';
-import ContactForm from '../contact_form';
+import { Container, H1 } from '../shared/components';
+import { Pledge } from '../pledge/components';
+import { ContactForm } from '../contact/components';
 import styles from './home_page.styl';
 
 export default class HomePage extends Component {

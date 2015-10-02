@@ -1,23 +1,10 @@
-/* eslint-disable no-var, max-len */
-
-// Remember to use babel-plugin-object-assign
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
 var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
 var stylusTypeUtils = require('stylus-type-utils');
 
 module.exports = {
-  entry: {
-    home_page: './client/home_page.js',
-  },
-
-  output: {
-    path: path.resolve(__dirname, '..', 'server', 'build', 'client'),
-    filename: '[name].js',
-  },
-
   module: {
     loaders: [
       {
@@ -28,7 +15,7 @@ module.exports = {
         test: /\.styl/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader?modules&&localIdentName=[name]__[local]___[hash:base64:5]' +
+          'css-loader?modules&&localIdentName=[path][name]__[local]___[hash:base64:5]' +
             '!stylus-loader?paths=node_modules'
         ),
       },
@@ -59,12 +46,7 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new ExtractTextPlugin('[name].css', { disable: true }),
-  ],
-
   stylus: {
     use: [jeet(), nib(), rupture(), stylusTypeUtils()],
   },
-
 };
