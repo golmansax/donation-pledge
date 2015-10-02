@@ -49,6 +49,6 @@
   },
   "scripts": {
     "start": "make development",
-    "postinstall": "if [ \"$NODE_ENV\" == \"production\" ]; then make build; fi"
+    "postinstall": "./scripts/npm_postinstall.sh"
   }
 }
