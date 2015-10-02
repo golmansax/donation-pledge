@@ -5,6 +5,7 @@ script:
 - travis-lint .travis.yml
 - make eslint
 - make stylint
+- NODE_ENV=production make build
 cache:
   directories:
   - node_modules
