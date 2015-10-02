@@ -1,10 +1,25 @@
 const onClient = !!global.window;
 
-let reqwest;
+let request;
 if (onClient) {
-  reqwest = require('reqwest');
+  request = require('superagent');
 } else {
-  reqwest = () => null;
+  request = () => null;
 }
 
-export const post = (url) => reqwest({ url, method: 'post' });
+export const post = (options) => {
+  return new Promise((resolve, reject) => {
+    request.post(options.url)
+      .send(options.data)
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        if (err) {
+          const { error } = res;
+          error.message = res.body.error || error.message;
+          reject(error);
+        } else {
+          resolve(res.body);
+        }
+      });
+  });
+};

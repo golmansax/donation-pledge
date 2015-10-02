@@ -6,33 +6,49 @@ import HomePage from '../webpack/build/home_page';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
 
+require('dotenv').load();
+
 const server = express();
 
 server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
-server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
 
 server.get('/', (req, res) => {
-  const html = '<!DOCTYPE html>' + React.renderToStaticMarkup(<HomePage/>);
+  const html = `<!DOCTYPE html>${React.renderToStaticMarkup(<HomePage/>)}`;
   res.send(html);
 });
 
-server.post('/contacts', (req, res) => {
-  /*
+server.post('/contacts', (req, res, next) => {
   const transporter = nodemailer.createTransport(mailgunTransport({
     auth: {
-      api_key: 'key-12fb3a2a3e316f7b48110e91082d545f',
-      domain: 'golmansax.com'
+      api_key: process.env.MAILGUN_API_KEY,
+      domain: process.env.MAILGUN_DOMAIN
     }
   }));
 
   transporter.sendMail({
-    from: 'golman622@gmail.com',
-    to: 'golman622@gmail.com',
-    subject: 'hello',
-    text: 'hello world!'
+    from: {
+      name: req.body.name,
+      email: req.body.email,
+    },
+    to: process.env.DEFAULT_EMAIL,
+    subject: 'Contact from My Impact Pledge',
+    text: req.body.comment,
+  }, (err, info) => {
+    if (err) {
+      next(new Error('Could not send email'));
+    } else {
+      res.json({});
+    }
   });
-  */
-  res.json({});
+});
+
+server.use((err, req, res, next) => {
+  if (process.env.NODE_ENV !== 'development') {
+    delete err.stack;
+  }
+
+  res.status(err.statusCode || 500).json({ error: err.message });
 });
 
 export default server;

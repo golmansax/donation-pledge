@@ -1,4 +1,5 @@
 import React from 'react';
+import { validate as isEmailValid } from 'email-validator';
 import { Button, H3 } from '../../shared/components';
 import { create } from '../actions';
 import styles from './form.styl';
@@ -56,14 +57,18 @@ export default class ContactForm extends React.Component {
 
   _submitForm(event) {
     const errorMessage = this._validateState();
-
-    if (!errorMessage) {
+    if (errorMessage) {
       alert(errorMessage);
       event.preventDefault();
       return;
     }
 
-    create().then(() => alert('Contact form sent!'));
+    const data = {};
+    ['name', 'email', 'comment'].forEach((key) => data[key] = this.state[key]);
+
+    create(data).then(() => alert('Contact form sent!'), (error) => {
+      alert(error.message);
+    });
   }
 
   _validateState() {
@@ -73,6 +78,8 @@ export default class ContactForm extends React.Component {
       message = 'Please fill out a name';
     } else if (!this.state.email) {
       message = 'Please fill out a email';
+    } else if (!isEmailValid(this.state.email)) {
+      message = 'Please use a valid email';
     } else if (!this.state.comment) {
       message = 'Please fill out a comment';
     }

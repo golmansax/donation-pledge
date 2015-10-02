@@ -22,8 +22,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['babel?optional[]=runtime'],
+        test: /\.jsx?$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          optional: ['runtime'],
+          compact: false,
+        },
       },
     ].concat(sharedConfig.module.loaders),
   },

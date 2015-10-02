@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "babel-eslint": "*",
+    "dotenv": "*",
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-config-golmansax": "*",
@@ -28,6 +29,7 @@
     "body-parser": "*",
     "classnames": "*",
     "css-loader": "*",
+    "email-validator": "*",
     "express": "*",
     "extract-text-webpack-plugin": "*",
     "file-loader": "*",
@@ -37,16 +39,16 @@
     "nodemailer": "*",
     "nodemailer-mailgun-transport": "*",
     "react": "*",
-    "reqwest": "< 2",
     "rupture": "*",
     "style-loader": "*",
     "stylus-loader": "*",
     "stylus-type-utils": "*",
+    "superagent": "*",
     "url-loader": "*",
     "webpack": "*"
   },
   "scripts": {
     "start": "make development",
-    "postinstall": "make build"
+    "postinstall": "[ \"$NODE_ENV\" == \"production\" ] && make build || exit 0"
   }
 }

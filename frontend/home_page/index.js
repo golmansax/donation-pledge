@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Layout from '../layout';
+import { DefaultLayout } from '../shared/layouts';
 import { Container, H1 } from '../shared/components';
 import { Pledge } from '../pledge/components';
 import { ContactForm } from '../contact/components';
-import styles from './home_page.styl';
+import styles from './style.styl';
 
 export default class HomePage extends Component {
   render() {
     return (
-      <Layout title='My Impact Pledge' name='home_page'>
+      <DefaultLayout title='My Impact Pledge' name='home_page'>
         <div className={styles.mainContainer}>
           <Container>
             <H1 className={styles.mainHeading}>
@@ -38,7 +38,7 @@ export default class HomePage extends Component {
             <div id='contact-form'><ContactForm /></div>
           </Container>
         </div>
-      </Layout>
+      </DefaultLayout>
     );
   }
 }

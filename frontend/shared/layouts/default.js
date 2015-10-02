@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.styl';
+import './default.styl';
 
-export default class Layout extends React.Component {
+export default class DefaultLayout extends React.Component {
   render() {
     return (
       /* eslint-disable max-len */
@@ -46,7 +46,7 @@ export default class Layout extends React.Component {
   }
 }
 
-Layout.propTypes = {
+DefaultLayout.propTypes = {
   title: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
