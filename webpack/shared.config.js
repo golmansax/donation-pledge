@@ -16,7 +16,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader?modules&&localIdentName=[path][name]__[local]___[hash:base64:5]' +
-            '!stylus-loader?paths=node_modules'
+            '!stylus-loader?paths[]=node_modules&paths[]=frontend/shared/styles'
         ),
       },
       {

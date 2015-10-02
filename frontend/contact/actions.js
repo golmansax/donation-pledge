@@ -1,3 +1,3 @@
-import { post } from '../my_http';
+import { post } from '../shared/utils/my_http';
 
 export const create = () => post('/contacts');
