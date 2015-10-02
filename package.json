@@ -7,6 +7,7 @@
     "type": "git",
     "url": "http://github.com/golmansax/donation-pledge.git"
   },
+  "main": "server/entry.js",
   "devDependencies": {
     "babel-eslint": "*",
     "dotenv": "*",
