@@ -2,13 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import React from 'react';
-import HomePage from './build/home_page';
+import HomePage from '../webpack/build/home_page';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
 
 const server = express();
 
-server.use(express.static(path.resolve(__dirname, 'build')));
+server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
 server.use(bodyParser.json());
 
 server.get('/', (req, res) => {

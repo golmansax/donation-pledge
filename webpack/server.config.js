@@ -10,7 +10,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '..', 'server', 'build'),
+    path: sharedConfig.output.path,
     filename: '[name].js',
     libraryTarget: 'commonjs2',
   },

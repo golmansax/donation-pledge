@@ -1,4 +1,7 @@
-.PHONY: build eslint production watch
+.PHONY: development build eslint production watch
+
+development:
+	nodemon --watch server --watch node_modules --watch webpack/build
 
 build:
 	./node_modules/.bin/webpack --progress --colors

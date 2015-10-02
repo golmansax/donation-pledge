@@ -1,6 +1,5 @@
 /* eslint-disable no-var, max-len */
 
-// Remember to use babel-plugin-object-assign
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var sharedConfig = require('./shared.config');
@@ -11,7 +10,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '..', 'server', 'build'),
+    path: sharedConfig.output.path,
     filename: '[name]-client_entry.js',
   },
 

@@ -1,3 +1,6 @@
+/* eslint-disable no-var, max-len */
+
+var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var jeet = require('jeet');
 var nib = require('nib');
@@ -5,12 +8,12 @@ var rupture = require('rupture');
 var stylusTypeUtils = require('stylus-type-utils');
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'build'),
+  },
+
   module: {
     loaders: [
-      {
-        test: /\.js$/,
-        loaders: ['babel?optional[]=runtime&plugins=babel-plugin-object-assign'],
-      },
       {
         test: /\.styl/,
         loader: ExtractTextPlugin.extract(
