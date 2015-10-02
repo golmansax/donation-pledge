@@ -1,7 +1,6 @@
 /* eslint-disable no-var, max-len */
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
 var sharedConfig = require('./shared.config');
 
 module.exports = {

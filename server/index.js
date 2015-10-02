@@ -22,8 +22,8 @@ server.post('/contacts', (req, res, next) => {
   const transporter = nodemailer.createTransport(mailgunTransport({
     auth: {
       api_key: process.env.MAILGUN_API_KEY,
-      domain: process.env.MAILGUN_DOMAIN
-    }
+      domain: process.env.MAILGUN_DOMAIN,
+    }7
   }));
 
   transporter.sendMail({
@@ -34,7 +34,7 @@ server.post('/contacts', (req, res, next) => {
     to: process.env.DEFAULT_EMAIL,
     subject: 'Contact from My Impact Pledge',
     text: req.body.comment,
-  }, (err, info) => {
+  }, (err) => {
     if (err) {
       next(new Error('Could not send email'));
     } else {
@@ -43,7 +43,7 @@ server.post('/contacts', (req, res, next) => {
   });
 });
 
-server.use((err, req, res, next) => {
+server.use((err, req, res) => {
   if (process.env.NODE_ENV !== 'development') {
     delete err.stack;
   }

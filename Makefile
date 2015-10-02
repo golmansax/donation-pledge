@@ -16,4 +16,4 @@ watch:
 	./node_modules/.bin/webpack -w -d --progress --colors
 
 stylint:
-	./node_modules/.bin/stylint components
+	./node_modules/.bin/stylint frontend
