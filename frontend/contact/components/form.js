@@ -44,7 +44,7 @@ export default class ContactForm extends React.Component {
             rows={4}
           />
         </div>
-        <Button onClick={this._submitForm.bind(this)}>
+        <Button onClick={this._submitForm.bind(this)} type='main'>
           Send!
         </Button>
       </div>

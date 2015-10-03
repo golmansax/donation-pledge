@@ -41,7 +41,11 @@ server.post('/contacts', (req, res, next) => {
   });
 });
 
-server.use((err, req, res) => {
+server.use((err, req, res, next) => {
+  if (res.headersSent) {
+    return next(err);
+  }
+
   if (process.env.NODE_ENV !== 'development') {
     delete err.stack;
   }
