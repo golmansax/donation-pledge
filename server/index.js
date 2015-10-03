@@ -25,20 +25,22 @@ server.post('/contacts', (req, res, next) => {
   }));
 
   transporter.sendMail({
-    from: {
-      name: req.body.name,
-      email: req.body.email,
-    },
+    from: `"${req.body.name}" <${req.body.email}>`,
     to: process.env.DEFAULT_EMAIL,
     subject: 'Contact from My Impact Pledge',
     text: req.body.comment,
   }, (err) => {
     if (err) {
-      next(new Error('Could not send email'));
+      next(err);
     } else {
       res.json({});
     }
   });
+});
+
+server.use((err, req, res, next) => {
+  console.error(err.stack);
+  next(err);
 });
 
 server.use((err, req, res, next) => {

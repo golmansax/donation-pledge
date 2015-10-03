@@ -10,8 +10,8 @@ if (onClient) {
 export const post = (options) => {
   return new Promise((resolve, reject) => {
     request.post(options.url)
+      .type('form')
       .send(options.data)
-      .set('Accept', 'application/json')
       .end((err, res) => {
         if (err) {
           const { error } = res;

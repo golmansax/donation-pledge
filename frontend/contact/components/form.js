@@ -67,8 +67,11 @@ export default class ContactForm extends React.Component {
     const data = {};
     ['name', 'email', 'comment'].forEach((key) => data[key] = this.state[key]);
 
-    create(data).then(() => alert('Contact form sent!'), (error) => {
-      alert(error.message);
+    create(data).then(() => alert('Contact form sent!'), () => {
+      alert(
+        'Sorry, something went wrong on our end. Please email ' +
+        'holman@golmansax.com for support.'
+      );
     });
   }
 
