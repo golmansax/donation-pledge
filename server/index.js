@@ -39,7 +39,7 @@ server.post('/contacts', (req, res, next) => {
 });
 
 server.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error(err.stack); // eslint-disable-line no-console
   next(err);
 });
 
