@@ -35,16 +35,28 @@ export default class Pledge extends React.Component {
   render() {
     return (
       <div className={styles.rootElement}>
-        <div className={styles.pledgeText}>
-          <SignedText text='Holman Gao' category='you' />
-          pledges to
-          <SignedText text='donate to organizations' category='impact' />
+        <div className={styles.pledge}>
+          I pledge to
+          <SignedText text='donate to youth programs' category='impact' />
           every
-          <SignedText text='year on my birthday' category='how often?' />.
+          <SignedText text='year on my birthday' category='how often?' />
         </div>
+        <div className={styles.container}>
+          <div className={styles.userImageContainer}>
+            <div className={styles.userImage} />
+            <SignedText text='Holman Gao' category='you' />
+          </div>
+          <div className={styles.otherContainer}>
+            <div className={styles.section}>
+              <H2 className={styles.heading}>Mission</H2>
+              I want to support organizations that empower youth.
+              I was lucky enough to benefit from them and I am very grateful.
+            </div>
 
-        <H2>My Impact</H2>
-        <DonationList donations={DONATIONS} />
+            <H2 className={styles.heading}>My Actions</H2>
+            <DonationList donations={DONATIONS} />
+          </div>
+        </div>
       </div>
     );
   }

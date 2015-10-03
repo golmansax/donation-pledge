@@ -42,6 +42,7 @@ export default class ContactForm extends React.Component {
             value={this.state.comment}
             onChange={this._updateState.bind(this, 'comment')}
             rows={4}
+            placeholder='e.g. Awesome Idea!'
           />
         </div>
         <Button onClick={this._submitForm.bind(this)} type='main'>
