@@ -23,7 +23,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.IgnorePlugin(/\.styl$/),
+    new webpack.NormalModuleReplacementPlugin(/\.styl/, 'node-noop'),
   ],
 
   stylus: sharedConfig.stylus,
