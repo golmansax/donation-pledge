@@ -19,11 +19,11 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel?optional[]=runtime&plugins=babel-plugin-object-assign'],
       },
-    ]
+    ],
   },
 
   plugins: [
-    new webpack.IgnorePlugin(/\.styl$/)
+    new webpack.IgnorePlugin(/\.styl$/),
   ],
 
   stylus: sharedConfig.stylus,
