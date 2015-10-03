@@ -1,6 +1,6 @@
 /* eslint-disable no-var, max-len */
 
-var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var sharedConfig = require('./shared.config');
 
 module.exports = {
@@ -19,11 +19,11 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel?optional[]=runtime&plugins=babel-plugin-object-assign'],
       },
-    ],
+    ].concat(sharedConfig.module.loaders),
   },
 
   plugins: [
-    new webpack.NormalModuleReplacementPlugin(/\.styl/, 'node-noop'),
+    new ExtractTextPlugin('[name].css', { disable: true }),
   ],
 
   stylus: sharedConfig.stylus,
