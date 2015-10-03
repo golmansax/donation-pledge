@@ -11,7 +11,8 @@ const DONATIONS = [
       url: 'http://www.mbhsmagnet.org/',
       text: 'Montgomery County ARML Team',
     },
-    reason: 'for having an awesome field trip every year',
+    reason: 'This was an overnight math team field trip that I went to ' +
+      'throughout middle and high school, and I loved going every year!',
   },
   {
     year: 2014,
@@ -19,7 +20,8 @@ const DONATIONS = [
       url: 'https://www.hopechineseschool.org/hcscp/',
       text: 'Hope Chinese School College Park Campus',
     },
-    reason: 'for helping me learn Chinese',
+    reason: 'I am very grateful to this school and my parents for ' +
+      'helping/forcing me to learn Mandarin Chinese',
   },
   {
     year: 2013,
@@ -27,7 +29,8 @@ const DONATIONS = [
       url: 'http://www.asia.si.edu/events/imaginasia.asp',
       text: 'Smithsonian ImaginAsia Family Program',
     },
-    reason: 'for being an awesome free program for kids',
+    reason: 'I volunteered for this program for six years, and I saw ' +
+      'firsthand how empowering art projects can be',
   },
 ];
 
@@ -37,7 +40,10 @@ export default class Pledge extends React.Component {
       <div className={styles.rootElement}>
         <div className={styles.pledge}>
           I pledge to
-          <SignedText text='donate to youth programs' category='impact' />
+          <SignedText
+            text='donate to youth education programs'
+            category='impact'
+          />
           every
           <SignedText text='year on my birthday' category='how often?' />
         </div>
@@ -49,8 +55,8 @@ export default class Pledge extends React.Component {
           <div className={styles.otherContainer}>
             <div className={styles.section}>
               <H2 className={styles.heading}>Mission</H2>
-              I want to support organizations that empower youth.
-              I was lucky enough to benefit from them and I am very grateful.
+              I was fortunate enough to benefit from great programs when I was
+              young and I want to support organizations that empower youth.
             </div>
 
             <H2 className={styles.heading}>My Actions</H2>

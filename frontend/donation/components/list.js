@@ -11,11 +11,15 @@ export default class DonationList extends React.Component {
   _renderDonation(donation, index) {
     return (
       <div className={styles.listItem} key={index}>
-        {donation.year} -&nbsp;
-        <span className={styles.action}>Donated</span>
-        &nbsp;to&nbsp;
-        <a href={donation.organization.url}>{donation.organization.text}</a>
-        <div>{donation.reason}</div>
+        <div className={styles.year}>{donation.year}</div>
+        <div className={styles.content}>
+          <div className={styles.heading}>
+            <span className={styles.action}>Donated</span>
+            &nbsp;to&nbsp;
+            <a href={donation.organization.url}>{donation.organization.text}</a>
+          </div>
+          <div>{donation.reason}</div>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 /* eslint-disable no-var, max-len */
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 var sharedConfig = require('./shared.config');
 
 module.exports = {
@@ -19,11 +19,11 @@ module.exports = {
         test: /\.js$/,
         loaders: ['babel?optional[]=runtime&plugins=babel-plugin-object-assign'],
       },
-    ].concat(sharedConfig.module.loaders),
+    ]
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css', { disable: true }),
+    new webpack.IgnorePlugin(/\.styl$/)
   ],
 
   stylus: sharedConfig.stylus,
