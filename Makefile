@@ -4,7 +4,7 @@ development:
 	nodemon --watch server --watch node_modules --watch webpack/build server/entry.js
 
 build:
-	./node_modules/.bin/webpack --progress --colors
+	./node_modules/.bin/webpack --progress --colors -p
 
 eslint:
 	./node_modules/.bin/eslint .

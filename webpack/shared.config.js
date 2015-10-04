@@ -2,6 +2,7 @@
 
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer-stylus');
 var jeet = require('jeet');
 var nib = require('nib');
 var rupture = require('rupture');
@@ -50,6 +51,6 @@ module.exports = {
   },
 
   stylus: {
-    use: [jeet(), nib(), rupture(), stylusTypeUtils()],
+    use: [jeet(), nib(), rupture(), stylusTypeUtils(), autoprefixer()],
   },
 };

@@ -23,6 +23,7 @@
     "webpack-dev-server": "*"
   },
   "dependencies": {
+    "autoprefixer-stylus": "*",
     "babel": "*",
     "babel-loader": "*",
     "babel-plugin-object-assign": "*",
