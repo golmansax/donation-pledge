@@ -1,5 +1,6 @@
 import React from 'react';
 import './default.styl';
+import favicon from './favicon.png';
 
 export default class DefaultLayout extends React.Component {
   render() {
@@ -33,6 +34,7 @@ export default class DefaultLayout extends React.Component {
             href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
           />
           <link rel='stylesheet' href={`/${this.props.name}.css`} />
+          <link rel='icon' href={favicon} />
           <meta name='viewport' content='width=device-width, user-scalable=no' />
           <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
         </head>
