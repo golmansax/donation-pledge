@@ -3,6 +3,9 @@
   "description": "My donation pledge",
   "version": "0.0.1",
   "license": "MIT",
+  "engines": {
+    "node": "4.1.x"
+  },
   "repository": {
     "type": "git",
     "url": "http://github.com/golmansax/donation-pledge.git"
