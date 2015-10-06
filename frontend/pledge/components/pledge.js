@@ -21,7 +21,7 @@ const DONATIONS = [
       text: 'Hope Chinese School College Park Campus',
     },
     reason: 'I am very grateful to this school and my parents for ' +
-      'helping/forcing me to learn Mandarin Chinese',
+      'helping/pushing me to learn Mandarin Chinese',
   },
   {
     year: 2013,

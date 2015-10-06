@@ -1,10 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import React from 'react';
-import HomePage from '../webpack/build/home_page';
+import React, { renderToStaticMarkup } from 'react';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
+import webpackAssets from '../webpack/assets';
+import HomePage from '../webpack/build/home_page.server_entry';
 
 const server = express();
 
@@ -12,8 +13,8 @@ server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
 server.use(bodyParser.urlencoded({ extended: false }));
 
 server.get('/', (req, res) => {
-  const html = `<!DOCTYPE html>${React.renderToStaticMarkup(<HomePage/>)}`;
-  res.send(html);
+  const page = renderToStaticMarkup(<HomePage assets={webpackAssets} />);
+  res.send(`<!DOCTYPE html>${page}`);
 });
 
 server.post('/contacts', (req, res, next) => {

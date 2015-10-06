@@ -43,7 +43,7 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'file?hash=sha512&digest=hex&name=[path][name].[hash].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
         ],
       },
@@ -52,5 +52,11 @@ module.exports = {
 
   stylus: {
     use: [jeet(), nib(), rupture(), stylusTypeUtils(), autoprefixer()],
+  },
+
+  resolve: {
+    alias: {
+      _webpack_assets: path.resolve(__dirname, '_webpack_assets.js'),
+    },
   },
 };

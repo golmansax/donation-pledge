@@ -1,7 +1,10 @@
 /* eslint-disable no-var, max-len */
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var AssetsPlugin = require('assets-webpack-plugin');
 var sharedConfig = require('./shared.config');
+var fs = require('fs');
+var path = require('path');
 
 module.exports = {
   entry: {
@@ -10,7 +13,7 @@ module.exports = {
 
   output: {
     path: sharedConfig.output.path,
-    filename: '[name]-client_entry.js',
+    filename: '[name].client_entry.[chunkhash].js',
   },
 
   module: {
@@ -23,9 +26,12 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css', { disable: true }),
+    new ExtractTextPlugin('', { disable: true }),
+    new AssetsPlugin({
+      path: path.join(__dirname, 'build'),
+      filename: 'webpack_assets.client.json',
+    }),
   ],
 
   stylus: sharedConfig.stylus,
-
 };

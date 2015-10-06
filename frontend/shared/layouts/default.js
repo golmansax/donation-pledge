@@ -1,9 +1,13 @@
 import React from 'react';
-import './default.styl';
 import favicon from './favicon.png';
+import { getAsset } from '../assets/store';
+import './default.styl';
 
 export default class DefaultLayout extends React.Component {
   render() {
+    const cssFile = getAsset(`${this.props.name}.css`);
+    const jsFile = getAsset(`${this.props.name}.js`);
+
     return (
       /* eslint-disable max-len */
       <html>
@@ -33,14 +37,14 @@ export default class DefaultLayout extends React.Component {
             rel='stylesheet'
             href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
           />
-          <link rel='stylesheet' href={`/${this.props.name}.css`} />
+          <link rel='stylesheet' href={`/${cssFile}`} />
           <link rel='icon' href={favicon} />
           <meta name='viewport' content='width=device-width, user-scalable=no' />
           <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
         </head>
         <body>
           {this.props.children}
-          <script type='text/javascript' src={`/${this.props.name}-client_entry.js`} />
+          <script type='text/javascript' src={`/${jsFile}`} />
         </body>
       </html>
       /* eslint-enable max-len */
