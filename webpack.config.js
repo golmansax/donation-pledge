@@ -1,4 +1,4 @@
 module.exports = [
-  require('./webpack/server.config.js'),
-  require('./webpack/client.config.js'),
+  require('./webpack/config.server.js'),
+  require('./webpack/config.client.js'),
 ];
