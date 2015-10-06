@@ -10,7 +10,7 @@ export default function makeServerEntry(MyComponent) {
     render() {
       return <MyComponent />;
     }
-  };
+  }
 
   ServerComponent.propTypes = {
     assets: PropTypes.object.isRequired,

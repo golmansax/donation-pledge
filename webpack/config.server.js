@@ -3,7 +3,6 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
 var sharedConfig = require('./config.shared');
-var fs = require('fs');
 var path = require('path');
 
 module.exports = {
