@@ -40,12 +40,13 @@ export default class Pledge extends Component {
       <div className={styles.rootElement}>
         <div className={styles.pledge}>
           I pledge to
-          <SignedText
-            text='donate to youth education programs'
-            category='impact'
-          />
+          <SignedText category='impact'>
+            donate to youth education programs
+          </SignedText>
           every
-          <SignedText text='year on my birthday' category='how often?' />
+          <SignedText category='how often?'>
+            year on my birthday
+          </SignedText>
         </div>
         <div className={styles.container}>
           <div className={styles.userImageContainer}>

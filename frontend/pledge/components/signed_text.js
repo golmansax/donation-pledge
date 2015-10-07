@@ -6,7 +6,7 @@ export default class SignedText extends Component {
   render() {
     return (
       <span className={styles.rootElement}>
-        <span className={styles.text}>{this.props.text}</span>
+        <span className={styles.text}>{this.props.children}</span>
         <H3 className={styles.category}>{this.props.category}</H3>
       </span>
     );
@@ -14,6 +14,6 @@ export default class SignedText extends Component {
 }
 
 SignedText.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { DefaultLayout } from '../shared/layouts';
 import { Container, H1 } from '../shared/components';
-import { Pledge } from '../pledge/components';
+import { Pledge, PledgeBanner } from '../pledge/components';
 import { ContactForm } from '../contact/components';
 import styles from './style.styl';
 
@@ -24,6 +24,7 @@ export default class HomePage extends Component {
             Build a habit of supporting causes that mean the most to you
           </Container>
         </div>
+        <div id='pledge-banner'><PledgeBanner /></div>
 
         <div className={styles.section}>
           <Container>
