@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import { Component, PropTypes } from 'react';
 import { loadAssets } from '../assets/store';
 
 export default function makeServerEntry(MyComponent) {

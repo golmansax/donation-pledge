@@ -1,10 +1,10 @@
-import React from 'react';
+import { Component } from 'react';
 import { validate as isEmailValid } from 'email-validator';
 import { Button, H3 } from '../../shared/components';
 import { create } from '../actions';
 import styles from './form.styl';
 
-export default class ContactForm extends React.Component {
+export default class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -4,6 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var AssetsPlugin = require('assets-webpack-plugin');
 var sharedConfig = require('./config.shared');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -30,6 +31,7 @@ module.exports = {
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.client.json',
     }),
+    new webpack.ProvidePlugin({ React: 'react' }),
   ],
 
   stylus: sharedConfig.stylus,

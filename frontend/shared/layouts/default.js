@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
 import favicon from './favicon.png';
 import { getAsset } from '../assets/store';
 import './default.styl';
 
-export default class DefaultLayout extends React.Component {
+export default class DefaultLayout extends Component {
   render() {
     const cssFile = getAsset(`${this.props.name}.css`);
     const jsFile = getAsset(`${this.props.name}.js`);
@@ -53,7 +53,7 @@ export default class DefaultLayout extends React.Component {
 }
 
 DefaultLayout.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  children: React.PropTypes.arrayOf(React.PropTypes.element).isRequired,
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };

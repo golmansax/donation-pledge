@@ -1,9 +1,9 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import { H3 } from '../';
 import styles from './button.styl';
 
-export default class Button extends React.Component {
+export default class Button extends Component {
   render() {
     const myClass = classNames({
       [styles[this.props.type]]: true,
@@ -21,11 +21,11 @@ export default class Button extends React.Component {
 Button.defaultProps = { type: 'main' };
 
 Button.propTypes = {
-  className: React.PropTypes.string,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string,
-    React.PropTypes.arrayOf(React.PropTypes.element),
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
-  type: React.PropTypes.string,
+  type: PropTypes.string,
 };

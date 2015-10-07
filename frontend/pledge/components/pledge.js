@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import SignedText from './signed_text';
 import { H2 } from '../../shared/components';
 import { DonationList } from '../../donation/components';
@@ -34,7 +34,7 @@ const DONATIONS = [
   },
 ];
 
-export default class Pledge extends React.Component {
+export default class Pledge extends Component {
   render() {
     return (
       <div className={styles.rootElement}>

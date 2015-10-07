@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './container.styl';
 
-export default class Container extends React.Component {
+export default class Container extends Component {
   render() {
     const myClass = classNames({
       [styles.rootElement]: true,
@@ -16,10 +16,10 @@ export default class Container extends React.Component {
 }
 
 Container.propTypes = {
-  className: React.PropTypes.string,
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.string,
-    React.PropTypes.arrayOf(React.PropTypes.element),
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
 };

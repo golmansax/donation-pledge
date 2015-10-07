@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
 import { H3 } from '../../shared/components';
 import styles from './signed_text.styl';
 
-export default class SignedText extends React.Component {
+export default class SignedText extends Component {
   render() {
     return (
       <span className={styles.rootElement}>
@@ -14,6 +14,6 @@ export default class SignedText extends React.Component {
 }
 
 SignedText.propTypes = {
-  text: React.PropTypes.string.isRequired,
-  category: React.PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };

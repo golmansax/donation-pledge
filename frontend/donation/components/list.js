@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
 import styles from './list.styl';
 
-export default class DonationList extends React.Component {
+export default class DonationList extends Component {
   render() {
     return (
       <div>{this.props.donations.map(this._renderDonation)}</div>
@@ -26,5 +26,5 @@ export default class DonationList extends React.Component {
 }
 
 DonationList.propTypes = {
-  donations: React.PropTypes.array.isRequired,
+  donations: PropTypes.array.isRequired,
 };

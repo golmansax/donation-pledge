@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { DefaultLayout } from '../shared/layouts';
 import { Container, H1 } from '../shared/components';
 import { Pledge } from '../pledge/components';
