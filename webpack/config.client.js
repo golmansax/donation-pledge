@@ -30,7 +30,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].css', { allChunks: true, disable: true }),
+    new ExtractTextPlugin('[name].client.css', { allChunks: true }),
     new AssetsPlugin({
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.client.json',

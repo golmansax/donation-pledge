@@ -6,7 +6,8 @@ const assets = Object.assign({}, serverAssets);
 // Now try to merge client assets in
 Object.keys(clientAssets).forEach((key) => {
   if (key in assets) {
-    Object.assign(assets[key], clientAssets[key]);
+    // Only use client js
+    assets[key].js = clientAssets[key].js;
   } else {
     assets[key] = clientAssets[key];
   }
