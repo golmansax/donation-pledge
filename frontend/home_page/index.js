@@ -28,7 +28,7 @@ export default class HomePage extends Component {
 
         <div className={styles.section}>
           <Container>
-            <H1 className={styles.sectionHeading}>Sample Pledge</H1>
+            <H1 className={styles.sectionHeading}>See what others are pledging</H1>
             <Pledge />
           </Container>
         </div>

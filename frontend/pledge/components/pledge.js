@@ -51,7 +51,7 @@ export default class Pledge extends Component {
         <div className={styles.container}>
           <div className={styles.userImageContainer}>
             <div className={styles.userImage} />
-            <SignedText text='Holman Gao' category='you' />
+            <SignedText category='you'>Holman Gao</SignedText>
           </div>
           <div className={styles.otherContainer}>
             <div className={styles.section}>

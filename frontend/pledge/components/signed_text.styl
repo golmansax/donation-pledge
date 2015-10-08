@@ -2,9 +2,7 @@
 
 .rootElement {
   position relative
-  padding 0 .5em
   margin 0 .5em
-  border-bottom em(1px) dotted black
 }
 
 .text {
@@ -12,13 +10,39 @@
   display inline-block
   font-family 'Pacifico'
   font-size 1.25em
-  min-width 5em
+}
+
+@keyframes cursorBlink {
+  from, to { border-color: black }
+  50% { border-color: transparent }
+}
+
+.textWithCursor {
+  $cursorPadding = .2em
+
+  composes text
+  animation cursorBlink 1s step-end infinite
+  border-right .1em solid black;
+  padding-right $cursorPadding
+  margin-left (-$cursorPadding)
 }
 
 .category {
   left 0
   position absolute
   text-align center
-  top 1.25em
+  top 1.4em
   width 100%
+}
+
+.textContainer {
+  display inline-block
+  border-bottom em(1px) dotted black
+  min-width 8em
+  padding 0 .5em
+}
+
+.highlightedTextContainer {
+  composes textContainer
+  background-color yellow
 }
