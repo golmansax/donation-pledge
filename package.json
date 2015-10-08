@@ -22,8 +22,7 @@
     "mocha": "*",
     "react-hot-loader": "*",
     "stylint": "*",
-    "travis-lint": "*",
-    "webpack-dev-server": "*"
+    "travis-lint": "*"
   },
   "dependencies": {
     "assets-webpack-plugin": "*",
