@@ -36,7 +36,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].[chunkhash].css'),
+    new ExtractTextPlugin('[name].[chunkhash].css', { allChunks: true }),
     new AssetsPlugin({
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.server.json',

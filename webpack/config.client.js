@@ -19,14 +19,18 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['babel?optional[]=runtime&plugins=babel-plugin-object-assign'],
+        test: /\.jsx?$/,
+        loader: 'babel',
+        query: {
+          // optional: ['runtime'],
+          plugins: 'babel-plugin-object-assign',
+        },
       },
     ].concat(sharedConfig.module.loaders),
   },
 
   plugins: [
-    new ExtractTextPlugin('', { disable: true }),
+    new ExtractTextPlugin('[name].css', { allChunks: true, disable: true }),
     new AssetsPlugin({
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.client.json',

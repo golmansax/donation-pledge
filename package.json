@@ -1,6 +1,6 @@
 {
-  "name": "donation-pledge",
-  "description": "My donation pledge",
+  "name": "my-impact-pledge",
+  "description": "My Impact Pledge",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/golmansax/donation-pledge.git"
+    "url": "http://github.com/golmansax/my-impact-pledge.git"
   },
   "main": "server/entry.js",
   "devDependencies": {
@@ -46,6 +46,7 @@
     "nodemailer": "*",
     "nodemailer-mailgun-transport": "*",
     "react": "*",
+    "react-dom": "*",
     "rupture": "*",
     "style-loader": "*",
     "stylus-loader": "*",

@@ -1,7 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import React, { renderToStaticMarkup } from 'react';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
 import webpackAssets from '../webpack/assets';
