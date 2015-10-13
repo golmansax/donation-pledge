@@ -25,6 +25,7 @@
     "travis-lint": "*"
   },
   "dependencies": {
+    "animated-scrollto": "*",
     "assets-webpack-plugin": "*",
     "autoprefixer-stylus": "*",
     "babel": "*",

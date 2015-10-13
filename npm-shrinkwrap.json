@@ -2,6 +2,11 @@
   "name": "my-impact-pledge",
   "version": "0.0.1",
   "dependencies": {
+    "animated-scrollto": {
+      "version": "1.1.0",
+      "from": "animated-scrollto@1.1.0",
+      "resolved": "https://registry.npmjs.org/animated-scrollto/-/animated-scrollto-1.1.0.tgz"
+    },
     "assets-webpack-plugin": {
       "version": "2.3.0",
       "from": "assets-webpack-plugin@*",

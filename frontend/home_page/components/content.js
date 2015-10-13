@@ -1,11 +1,16 @@
 import { Component } from 'react';
 import { Button, Container, H1, H2 } from '../../shared/components';
+import { scrollTo, registerScrollTarget } from '../../shared/utils/scroll_to';
 import { Pledge } from '../../pledge/components';
 import { ContactForm } from '../../contact/components';
 import Mission from './mission';
 import styles from './content.styl';
 
 export default class HomePageContent extends Component {
+  componentDidMount() {
+    registerScrollTarget('contactSection', this.refs.contactSection);
+  }
+
   render() {
     return (
       <div>
@@ -43,7 +48,7 @@ export default class HomePageContent extends Component {
           </Container>
         </div>
 
-        <div className={styles.contactSection}>
+        <div className={styles.contactSection} ref='contactSection'>
           <Container>
             <H1 type='secondary' className={styles.sectionHeading}>
               Send us a message!
@@ -60,5 +65,6 @@ export default class HomePageContent extends Component {
       'We are still working on this feature, but please leave your email ' +
       'and we will reach out to you when it is ready!'
     );
+    scrollTo('contactSection');
   }
 }
