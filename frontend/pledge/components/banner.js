@@ -4,10 +4,18 @@ import styles from './banner.styl';
 
 const INPUT_DATA = {
   impact: {
-    text: 'volunteer at a homeless shelter',
+    texts: [
+      'bake food for a homeless shelter',
+      'volunteer at a retirement home',
+      'donate towards fighting cancer',
+    ],
   },
   howOften: {
-    text: 'Thanksgiving',
+    texts: [
+      '3 months',
+      'Thanksgiving',
+      'year on my wedding anniversary',
+    ],
   },
 };
 const INPUT_ORDER = ['impact', 'howOften'];
@@ -16,8 +24,11 @@ export default class PledgeBanner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // We start by incrementing this counter
+      // We start by incrementing these counters
       activeInputIndex: -1,
+      impactTextIndex: -1,
+      howOftenTextIndex: -1,
+
       impact: '',
       howOften: '',
     };
@@ -81,7 +92,13 @@ export default class PledgeBanner extends Component {
 
   _startTyping() {
     const activeInput = this._getActiveInput();
-    const textToType = INPUT_DATA[activeInput].text;
+    const textIndexKey = `${activeInput}TextIndex`;
+    const numTexts = INPUT_DATA[activeInput].texts.length;
+    this.setState({
+      [textIndexKey]: (this.state[textIndexKey] + 1) % numTexts,
+    });
+
+    const textToType = INPUT_DATA[activeInput].texts[this.state[textIndexKey]];
     let counter = 0;
 
     const interval = setInterval(() => {
@@ -98,8 +115,7 @@ export default class PledgeBanner extends Component {
   }
 
   _changeInput() {
-    let nextIndex = this.state.activeInputIndex + 1;
-    if (nextIndex >= INPUT_ORDER.length) { nextIndex = 0 };
+    const nextIndex = (this.state.activeInputIndex + 1) % INPUT_ORDER.length;
 
     this.setState({
       activeInputIndex: nextIndex,

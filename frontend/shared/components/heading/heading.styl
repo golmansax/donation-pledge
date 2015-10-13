@@ -1,3 +1,4 @@
+@require _colors
 @require _fonts
 
 $headingScale = 1.5
@@ -9,29 +10,26 @@ $xlarge = $large * $headingScale
   line-height 1.2
 }
 
-.mainHeading {
+.main {
   composes rootElement
   font-family $headingFontFamily
   font-weight 700
   text-transform uppercase
 }
 
-.secondaryHeading {
+.secondary {
   composes rootElement
   font-weight 700
 }
 
 .h1 {
-  composes mainHeading
   font-size $xlarge
 }
 
 .h2 {
-  composes mainHeading
   font-size $large
 }
 
 .h3 {
-  composes mainHeading
   font-size $baseSize
 }

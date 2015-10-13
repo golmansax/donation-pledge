@@ -1,14 +1,21 @@
+@require jeet
 @require _colors
 
 .mainContainer {
   background $black url(./main_bg.jpg) no-repeat center -10em
   background-size auto 50em
-  height 25em
+  height 35em
+  position relative
 }
 
 .mainHeading {
   padding .5em .25em 0
   border-left .1em solid $purple
+}
+
+.mainButton {
+  font-size 1.2em
+  margin-top 2em
 }
 
 .headingEmphasis {
@@ -19,18 +26,37 @@
 }
 
 .section {
-  padding 2rem 0
+  padding 4rem 0
 }
 
 .sectionHeading {
   margin-bottom .5em
 }
 
+.mainMessage {
+  background rgba($purple, .9)
+  text-align center
+  color $white
+  position absolute
+  bottom 0
+  left 0
+  width 100%
+  padding 2rem 0
+}
+
 .missionSection {
   composes section
-  background $purple
-  color $white
-  font-size 1.5em
+  background $white
+  text-align center
+  padding-top 2rem
+}
+
+.reasonsContainer {
+  margin-top 2rem
+}
+
+.reason {
+  col(1/3)
 }
 
 .contactSection {

@@ -5,6 +5,7 @@ import styles from './heading.styl';
 export default class Heading extends Component {
   render() {
     const myClassName = classNames({
+      [styles[this.props.size]]: true,
       [styles[this.props.type]]: true,
       [this.props.className]: !!this.props.className,
     });
@@ -17,11 +18,12 @@ export default class Heading extends Component {
   }
 }
 
+Heading.defaultProps = { type: 'main' };
+
 Heading.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf([
-    'h1', 'h2', 'h3',
-  ]),
+  size: PropTypes.oneOf(['h1', 'h2', 'h3']),
+  type: PropTypes.oneOf(['main', 'secondary']),
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,

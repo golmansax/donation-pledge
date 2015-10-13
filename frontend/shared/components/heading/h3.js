@@ -3,7 +3,7 @@ import Heading from './heading';
 
 export default class H3 extends Component {
   render() {
-    return <Heading {...this.props} type='h3'>{this.props.children}</Heading>;
+    return <Heading {...this.props} size='h3'>{this.props.children}</Heading>;
   }
 }
 
