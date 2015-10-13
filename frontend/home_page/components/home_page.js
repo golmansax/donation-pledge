@@ -17,8 +17,8 @@ export default class HomePage extends Component {
               <div className={styles.headingEmphasis}>impact</div>
               will you make?
             </H1>
-            <Button className={styles.mainButton} style={{display: 'none'}}>
-              Make a pledge
+            <Button className={styles.mainButton}>
+              Create a pledge
             </Button>
           </Container>
 
