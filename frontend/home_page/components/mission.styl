@@ -1,0 +1,35 @@
+@require jeet
+@require nib
+@require _colors
+
+.column {
+  col(1/2)
+}
+
+.pledgeColumn {
+  composes column
+  margin-top 1.5em
+}
+
+.reasonColumn {
+  composes column
+}
+
+.reason {
+  clearfix()
+  margin-bottom 1.25em
+}
+
+.reasonIcon {
+  float left
+  color $purple
+  margin 0 .5em 1em 1.5em
+}
+
+.reasonHeading {
+  margin-bottom .25em
+}
+
+.reasonText {
+  line-height 1.4
+}

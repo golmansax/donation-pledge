@@ -6,8 +6,27 @@
   background $white
 }
 
-.pledge {
-  font-size 1.3em
-  padding-bottom 2em
+.heading {
   text-align center
+  margin-bottom .75em
+}
+
+$labelWidth = 5em
+
+.inputContainer {
+  font-size 1.3em
+  position relative
+}
+
+.signedTextContainer {
+  padding 0 .5em 2em
+  text-align center
+}
+
+.inputLabel {
+  position absolute
+  width $labelWidth
+  left (-1 * $labelWidth)
+  top .25em
+  text-align right
 }

@@ -35,7 +35,7 @@ export default class DefaultLayout extends Component {
           />
           <link
             rel='stylesheet'
-            href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
+            href='https://cdn.linearicons.com/free/1.0.0/icon-font.min.css'
           />
           <link rel='stylesheet' href={`/${cssFile}`} />
           <link rel='icon' href={favicon} />

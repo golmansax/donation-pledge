@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { H1 } from '../../shared/components';
 import SignedText from './signed_text';
 import styles from './banner.styl';
 
@@ -43,21 +44,30 @@ export default class PledgeBanner extends Component {
   render() {
     return (
       <div className={styles.rootElement}>
-        <div className={styles.pledge}>
-          I pledge to
-          <SignedText
-            hasFocus={this._isActiveInput.bind(this)('impact')}
-            category='impact'
-            >
-            {this.state.impact}
-          </SignedText>
-          every
-          <SignedText
-            hasFocus={this._isActiveInput.bind(this)('howOften')}
-            category='how often?'
-            >
-            {this.state.howOften}
-          </SignedText>
+        <H1 className={styles.heading} type='secondary'>I pledge...</H1>
+        <div className={styles.inputContainer}>
+          <div className={styles.inputLabel}>to</div>
+          <div className={styles.signedTextContainer}>
+            <SignedText
+              hasFocus={this._isActiveInput.bind(this)('impact')}
+              category='impact'
+              fullWidth
+              >
+              {this.state.impact}
+            </SignedText>
+          </div>
+        </div>
+        <div className={styles.inputContainer}>
+          <div className={styles.inputLabel}>every</div>
+          <div className={styles.signedTextContainer}>
+            <SignedText
+              hasFocus={this._isActiveInput.bind(this)('howOften')}
+              category='how often?'
+              fullWidth
+              >
+              {this.state.howOften}
+            </SignedText>
+          </div>
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ import styles from './signed_text.styl';
 export default class SignedText extends Component {
   render() {
     return (
-      <span className={styles.rootElement}>
+      <span className={this._getRootClassName.bind(this)()}>
         <span className={this._getTextContainerClassName.bind(this)()}>
           <span className={this._getTextClassName.bind(this)()}>
             {this._renderChildren.bind(this)()}
@@ -30,6 +30,7 @@ export default class SignedText extends Component {
     return classNames({
       [styles.textContainer]: !this.props.hasFocus,
       [styles.highlightedTextContainer]: !!this.props.hasFocus,
+      [styles.fullWidth]: !!this.props.fullWidth,
     });
   }
 
@@ -39,9 +40,23 @@ export default class SignedText extends Component {
       [styles.textWithCursor]: !!this.props.hasFocus,
     });
   }
+
+  _getRootClassName() {
+    return classNames({
+      [styles.rootElement]: !!this.props.fullWidth,
+      [styles.rootElementWithMargin]: !this.props.fullWidth,
+    });
+  }
 }
+
+SignedText.defaultProps = {
+  hasFocus: false,
+  fullWidth: false,
+};
 
 SignedText.propTypes = {
   children: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  fullWidth: PropTypes.bool,
+  hasFocus: PropTypes.bool,
 };

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import SignedText from './signed_text';
-import { H2 } from '../../shared/components';
+import { H2, P } from '../../shared/components';
 import { DonationList } from '../../donation/components';
 import styles from './pledge.styl';
 
@@ -56,8 +56,10 @@ export default class Pledge extends Component {
           <div className={styles.otherContainer}>
             <div className={styles.section}>
               <H2 className={styles.heading}>Mission</H2>
-              I was fortunate enough to benefit from great programs when I was
-              young and I want to support organizations that empower youth.
+              <P>
+                I was fortunate enough to benefit from great programs when I was
+                young and I want to support organizations that empower youth.
+              </P>
             </div>
 
             <H2 className={styles.heading}>My Actions</H2>
