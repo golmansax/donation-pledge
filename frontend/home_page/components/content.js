@@ -60,6 +60,5 @@ export default class HomePageContent extends Component {
       'We are still working on this feature, but please leave your email ' +
       'and we will reach out to you when it is ready!'
     );
-
   }
 }
