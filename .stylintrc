@@ -90,7 +90,7 @@
   },
   "sortOrder": {
     "expect": "alphabetical",
-    "error": true
+    "error": false
   },
   "stackedProperties": {
     "expect": "never",
