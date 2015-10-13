@@ -1,6 +1,4 @@
 import { render } from 'react-dom';
-import { ContactForm } from '../contact/components';
-import { PledgeBanner } from '../pledge/components';
+import { HomePageContent } from './components';
 
-render(<ContactForm />, document.getElementById('contact-form'));
-render(<PledgeBanner />, document.getElementById('pledge-banner'));
+render(<HomePageContent />, document.getElementById('content'));
