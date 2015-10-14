@@ -5,6 +5,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
+import { NODE_ENV } from './config';
 import webpackAssets from '../webpack/assets';
 import HomePage from '../webpack/build/home_page.server_entry';
 
@@ -50,7 +51,7 @@ server.use((err, req, res, next) => {
     return next(err);
   }
 
-  if (process.env.NODE_ENV !== 'development') {
+  if (NODE_ENV !== 'development') {
     delete err.stack;
   }
 

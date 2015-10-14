@@ -1,5 +1,6 @@
-const env = process.env.NODE_ENV || 'development';
-if (env === 'development') { require('dotenv').load(); }
-
 require('babel/register');
-require('./').listen(process.env.PORT || 3000);
+
+const config = require('./config');
+if (config.NODE_ENV === 'development') { require('dotenv').load(); }
+
+require('./').listen(config.PORT);

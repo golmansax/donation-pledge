@@ -1,5 +1,7 @@
 /* eslint-disable no-var, max-len */
 
+import { NODE_ENV } from '../server/config';
+
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer-stylus');
@@ -48,6 +50,8 @@ module.exports = {
         ],
       },
     ],
+
+    postLoaders: NODE_ENV === 'production' ? [{ loader: 'transform?envify' }] : undefined,
   },
 
   stylus: {
