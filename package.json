@@ -36,6 +36,7 @@
     "classnames": "*",
     "css-loader": "*",
     "email-validator": "*",
+    "envify": "*",
     "express": "*",
     "extract-text-webpack-plugin": "*",
     "file-loader": "*",
@@ -52,6 +53,7 @@
     "stylus-loader": "*",
     "stylus-type-utils": "*",
     "superagent": "*",
+    "transform-loader": "*",
     "url-loader": "*",
     "webpack": "*"
   },

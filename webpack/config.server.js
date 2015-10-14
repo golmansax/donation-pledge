@@ -33,6 +33,8 @@ module.exports = {
         },
       },
     ].concat(sharedConfig.module.loaders),
+
+    postLoaders: [{ loader: "transform?envify" }],
   },
 
   plugins: [
