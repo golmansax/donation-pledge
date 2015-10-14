@@ -1,14 +1,13 @@
-/* eslint-disable no-var, max-len */
+/* eslint-disable max-len */
 
+import path from 'path';
 import { NODE_ENV } from '../server/config';
-
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer-stylus');
-var jeet = require('jeet');
-var nib = require('nib');
-var rupture = require('rupture');
-var stylusTypeUtils = require('stylus-type-utils');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer-stylus';
+import jeet from 'jeet';
+import nib from 'nib';
+import rupture from 'rupture';
+import stylusTypeUtils from 'stylus-type-utils';
 
 module.exports = {
   output: {

@@ -1,10 +1,10 @@
-/* eslint-disable no-var, max-len */
+/* eslint-disable max-len */
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var AssetsPlugin = require('assets-webpack-plugin');
-var sharedConfig = require('./config.shared');
-var path = require('path');
-var webpack = require('webpack');
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import AssetsPlugin from 'assets-webpack-plugin';
+import sharedConfig from './config.shared';
+import path from 'path';
+import webpack from 'webpack';
 
 module.exports = {
   entry: {
