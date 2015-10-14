@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Container, H2, Icon, P } from '../../shared/components';
+import { Container, H2, Icon, P } from '../../base/components';
 import { PledgeBanner } from '../../pledge/components';
 import styles from './mission.styl';
 

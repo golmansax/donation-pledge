@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Button, Container, H1, H2 } from '../../shared/components';
-import { scrollTo } from '../../shared/state/scroll_to/actions';
-import { registerScrollTarget } from '../../shared/state/scroll_to/store';
+import { Button, Container, H1, H2 } from '../../base/components';
+import { scrollTo } from '../../shared_state/scroll_to/actions';
+import { registerScrollTarget } from '../../shared_state/scroll_to/store';
 import { Pledge } from '../../pledge/components';
 import { ContactForm } from '../../contact/components';
 import Mission from './mission';

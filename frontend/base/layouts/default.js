@@ -1,6 +1,6 @@
 import { Component, PropTypes } from 'react';
 import favicon from './favicon.png';
-import { getAsset } from '../state/asset_store';
+import { getAsset } from '../../shared_state/asset_store';
 import './default.styl';
 
 export default class DefaultLayout extends Component {

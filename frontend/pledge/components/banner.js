@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { H1 } from '../../shared/components';
+import { H1 } from '../../base/components';
 import SignedText from './signed_text';
 import styles from './banner.styl';
 

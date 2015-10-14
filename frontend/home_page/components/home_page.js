@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { DefaultLayout } from '../../shared/layouts';
+import { DefaultLayout } from '../../base/layouts';
 import HomePageContent from './content';
 
 export default class HomePage extends Component {

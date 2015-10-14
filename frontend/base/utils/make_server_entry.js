@@ -1,5 +1,5 @@
 import { Component, PropTypes } from 'react';
-import { loadAssets } from '../state/asset_store';
+import { loadAssets } from '../../shared_state/asset_store';
 
 export default function makeServerEntry(MyComponent) {
   class ServerComponent extends Component {

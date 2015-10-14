@@ -1,5 +1,5 @@
 import { Component, PropTypes } from 'react';
-import { P } from '../../shared/components';
+import { P } from '../../base/components';
 import styles from './list.styl';
 
 export default class DonationList extends Component {

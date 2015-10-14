@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { validate as isEmailValid } from 'email-validator';
-import { Button, H3 } from '../../shared/components';
+import { Button, H3 } from '../../base/components';
 import { create } from '../actions';
 import styles from './form.styl';
 

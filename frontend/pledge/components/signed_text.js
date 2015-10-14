@@ -1,6 +1,6 @@
 import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import { H3 } from '../../shared/components';
+import { H3 } from '../../base/components';
 import styles from './signed_text.styl';
 
 export default class SignedText extends Component {
