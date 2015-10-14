@@ -74,7 +74,7 @@ export default class ContactForm extends Component {
           'Sorry, something went wrong on our end. Please email ' +
           'holman@golmansax.com for support.'
         );
-      },
+      }
     );
   }
 
