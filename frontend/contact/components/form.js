@@ -67,12 +67,15 @@ export default class ContactForm extends Component {
     const data = {};
     ['name', 'email', 'comment'].forEach((key) => data[key] = this.state[key]);
 
-    create(data).then(() => alert('Contact form sent!'), () => {
-      alert(
-        'Sorry, something went wrong on our end. Please email ' +
-        'holman@golmansax.com for support.'
-      );
-    });
+    create(data).then(
+      () => alert('Your email has been sent!'),
+      () => {
+        alert(
+          'Sorry, something went wrong on our end. Please email ' +
+          'holman@golmansax.com for support.'
+        );
+      },
+    );
   }
 
   _validateState() {

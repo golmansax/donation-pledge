@@ -2,6 +2,8 @@
   "extends": "golmansax",
 
   "rules": {
-    "no-process-env": 2
+    "no-process-env": 2,
+
+    "arrow-parens": [2, "always"]
   }
 }
