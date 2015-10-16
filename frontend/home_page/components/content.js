@@ -4,6 +4,7 @@ import { scrollTo } from '../../shared_state/scroll_to/actions';
 import { registerScrollTarget } from '../../shared_state/scroll_to/store';
 import { Pledge } from '../../pledge/components';
 import { ContactForm } from '../../contact/components';
+import { alert } from '../../shared_state/popup/actions';
 import Mission from './mission';
 import styles from './content.styl';
 
@@ -65,7 +66,6 @@ export default class HomePageContent extends Component {
     alert(
       'We are still working on this feature, but please leave your email ' +
       'and we will reach out to you when it is ready!'
-    );
-    scrollTo('contactSection');
+    ).then(() => scrollTo('contactSection'));
   }
 }

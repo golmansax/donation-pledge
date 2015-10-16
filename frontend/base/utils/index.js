@@ -1,13 +1,4 @@
-import { PropTypes } from 'react';
+import makeServerEntry from './make_server_entry';
 
-export function bindComponentPropTypes(klass) {
-  klass.propTypes = Object.assign({
-    children: PropTypes.oneOfType([
-      PropTypes.element,
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.element),
-    ]).isRequired,
-  }, klass.propTypes);
-
-  return klass;
-}
+export { makeServerEntry };
+export * from './my_http';

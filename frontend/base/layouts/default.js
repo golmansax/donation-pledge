@@ -1,6 +1,7 @@
 import { Component, PropTypes } from 'react';
 import favicon from './favicon.png';
 import { getAsset } from '../../shared_state/asset_store';
+import { PopupBackdrop } from '../../shared_state/popup/components';
 import './default.styl';
 
 export default class DefaultLayout extends Component {
@@ -44,6 +45,7 @@ export default class DefaultLayout extends Component {
         </head>
         <body>
           {this.props.children}
+          <div id='popupBackdrop'><PopupBackdrop /></div>
           <script type='text/javascript' src={`/${jsFile}`} />
         </body>
       </html>

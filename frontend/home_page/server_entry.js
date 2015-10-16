@@ -1,4 +1,4 @@
-import makeServerEntry from '../base/utils/make_server_entry';
+import { makeServerEntry } from '../base/utils';
 import { HomePage } from './components';
 
 export default makeServerEntry(HomePage);
