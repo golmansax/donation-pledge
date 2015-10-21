@@ -52,14 +52,9 @@ server.use((err, req, res, next) => {
 });
 
 server.use((err, req, res, next) => {
-  if (res.headersSent) {
-    return next(err);
-  }
+  if (res.headersSent) { return next(err); }
 
-  if (NODE_ENV !== 'development') {
-    delete err.stack;
-  }
-
+  if (NODE_ENV !== 'development') { Reflect.deleteProperty(err, 'stack'); }
   res.status(err.statusCode || 500).json({ error: err.message });
 });
 

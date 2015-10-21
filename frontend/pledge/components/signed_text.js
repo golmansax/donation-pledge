@@ -55,8 +55,8 @@ SignedText.defaultProps = {
 };
 
 SignedText.propTypes = {
-  children: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   fullWidth: PropTypes.bool,
   hasFocus: PropTypes.bool,
 };
