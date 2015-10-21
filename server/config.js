@@ -1,7 +1,8 @@
 /* eslint-disable no-process-env */
 
-export const NODE_ENV = process.env.NODE_ENV || 'development';
-if (NODE_ENV === 'development') { require('dotenv').load(); }
+const NODE_ENV = process.env.NODE_ENV || 'development';
+export const isDevelopment = () => NODE_ENV === 'development';
+if (isDevelopment()) { require('dotenv').load(); }
 
 export const PORT = process.env.PORT || 3000;
 export const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;

@@ -9,7 +9,7 @@ import {
   DEFAULT_EMAIL,
   MAILGUN_API_KEY,
   MAILGUN_DOMAIN,
-  NODE_ENV,
+  isDevelopment,
 } from './config';
 import webpackAssets from '../webpack/assets';
 import HomePage from '../webpack/build/home_page.server_entry';
@@ -54,7 +54,7 @@ server.use((err, req, res, next) => {
 server.use((err, req, res, next) => {
   if (res.headersSent) { return next(err); }
 
-  if (NODE_ENV !== 'development') { Reflect.deleteProperty(err, 'stack'); }
+  if (isDevelopment()) { Reflect.deleteProperty(err, 'stack'); }
   res.status(err.statusCode || 500).json({ error: err.message });
 });
 
