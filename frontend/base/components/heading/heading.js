@@ -21,12 +21,12 @@ export default class Heading extends Component {
 Heading.defaultProps = { type: 'main' };
 
 Heading.propTypes = {
-  className: PropTypes.string,
-  size: PropTypes.oneOf(['h1', 'h2', 'h3']),
-  type: PropTypes.oneOf(['main', 'secondary']),
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+  className: PropTypes.string,
+  size: PropTypes.oneOf(['h1', 'h2', 'h3']),
+  type: PropTypes.oneOf(['main', 'secondary']),
 };

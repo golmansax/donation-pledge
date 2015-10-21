@@ -8,10 +8,10 @@ export default class H3 extends Component {
 }
 
 H3.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+  className: PropTypes.string,
 };

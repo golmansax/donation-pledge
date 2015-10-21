@@ -16,10 +16,10 @@ export default class Container extends Component {
 }
 
 Container.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+  className: PropTypes.string,
 };

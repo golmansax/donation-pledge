@@ -53,7 +53,7 @@ export default class DefaultLayout extends Component {
 }
 
 DefaultLayout.propTypes = {
-  title: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };

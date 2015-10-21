@@ -21,11 +21,11 @@ export default class Button extends Component {
 Button.defaultProps = { type: 'main' };
 
 Button.propTypes = {
-  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
+  className: PropTypes.string,
   type: PropTypes.string,
 };

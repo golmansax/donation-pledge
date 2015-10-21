@@ -1,16 +1,11 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import { loadAssets } from '../../shared_state/asset_store';
 
 export default function makeServerEntry(MyComponent) {
-  class ServerComponent extends Component {
-    componentWillMount() {
-      loadAssets(this.props.assets);
-    }
-
-    render() {
-      return <MyComponent />;
-    }
-  }
+  const ServerComponent = ({ assets, ...props}) => {
+    loadAssets(assets);
+    return <MyComponent {...props} />;
+  };
 
   ServerComponent.propTypes = {
     assets: PropTypes.object.isRequired,
