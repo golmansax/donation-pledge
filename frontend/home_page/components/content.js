@@ -18,11 +18,11 @@ export default class HomePageContent extends Component {
       <div>
         <div className={styles.mainContainer}>
           <Container>
-            <H1 className={styles.mainHeading}>
-              What
-              <div className={styles.headingEmphasis}>impact</div>
-              will you make?
-            </H1>
+            <div className={styles.mainHeading}>
+              <H1>What</H1>
+              <H1 className={styles.headingEmphasis}>impact</H1>
+              <H1>will you make?</H1>
+            </div>
             <Button className={styles.mainButton} onClick={this._goToContact}>
               Create a pledge
             </Button>

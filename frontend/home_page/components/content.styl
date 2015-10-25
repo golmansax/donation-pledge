@@ -1,32 +1,40 @@
 @require jeet
 @require _colors
+@require _spacing
 
 .mainContainer {
   background $black url(./main_bg.jpg) no-repeat center -10em
   background-size auto 50em
-  height 35em
+  height unit($lambda * 22, em)
   position relative
 }
 
 .mainHeading {
-  padding .5em .25em 0
-  border-left .1em solid $purple
+  padding $spacing1x $spacingHalf 0
+  border-left .2em solid $purple
 }
 
 .mainButton {
-  margin-top 2em
-  padding 1em 3em
+  margin-top $spacing1x
+  padding-left $spacing2x
+  padding-right $spacing2x
 }
 
 .headingEmphasis {
-  font-size 3em
-  line-height .8
-  margin-bottom .05em
+  // TODO combine this with heading
+  $emphasisScale = 2.25 * 3
+
+  // Not sure why, but it looks a little too high
+  $marginTopFudge = .01em
+
   color $purple
+  font-size unit($emphasisScale, em)
+  line-height ($lambda * 4 / $emphasisScale)
+  margin (-1 * $marginTopFudge) 0 $marginTopFudge
 }
 
 .section {
-  padding 4rem 0
+  padding $spacing3x 0
 }
 
 .sectionHeading {
@@ -38,7 +46,7 @@
   bottom 0
   color $white
   left 0
-  padding 2rem 0
+  padding $spacing1x 0
   position absolute
   text-align center
   width 100%

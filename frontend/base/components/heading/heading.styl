@@ -1,35 +1,34 @@
 @require _colors
 @require _fonts
+@require _units
 
 $headingScale = 1.5
-$baseSize = 1em
-$large = $baseSize * $headingScale
-$xlarge = $large * $headingScale
 
-.rootElement {
-  line-height 1.2
-}
+$h3Scale = 1
+$h2Scale = $h3Scale * $headingScale
+$h1Scale = $h2Scale * $headingScale
 
 .main {
-  composes rootElement
   font-family $headingFontFamily
   font-weight 700
   text-transform uppercase
 }
 
 .secondary {
-  composes rootElement
   font-weight 700
 }
 
 .h1 {
-  font-size $xlarge
+  font-size unit($h1Scale, em)
+  line-height (2 * $lambda / $h1Scale)
 }
 
 .h2 {
-  font-size $large
+  font-size unit($h2Scale, em)
+  line-height (2 * $lambda / $h2Scale)
 }
 
 .h3 {
-  font-size $baseSize
+  font-size unit($h3Scale, em)
+  line-height ($lambda / $h3Scale)
 }
