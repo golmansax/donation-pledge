@@ -20,7 +20,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style-loader',
           'css-loader?modules&localIdentName=[path][name]__[local]___[hash:base64:5]' +
-            '!stylus-loader?paths[]=node_modules&paths[]=frontend/base/styles'
+            '!stylus-loader?paths[]=node_modules&paths[]=lib/_frontend/styles'
         ),
       },
       {
