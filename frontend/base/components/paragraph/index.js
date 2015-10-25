@@ -6,6 +6,7 @@ export default class Paragraph extends Component {
   render() {
     const myClass = classNames({
       [styles.rootElement]: true,
+      [styles[this.props.type]]: true,
       [this.props.className]: !!this.props.className,
     });
 
@@ -15,6 +16,10 @@ export default class Paragraph extends Component {
   }
 }
 
+Paragraph.defaultProps = {
+  type: 'main',
+};
+
 Paragraph.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.element,
@@ -22,4 +27,5 @@ Paragraph.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   className: PropTypes.string,
+  type: PropTypes.string,
 };

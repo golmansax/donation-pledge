@@ -35,6 +35,11 @@ export default class DefaultLayout extends Component {
             href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
           />
           <link
+            type='text/css'
+            rel='stylesheet'
+            href='http://fonts.googleapis.com/css?family=Merriweather:400,700'
+          />
+          <link
             rel='stylesheet'
             href='https://cdn.linearicons.com/free/1.0.0/icon-font.min.css'
           />

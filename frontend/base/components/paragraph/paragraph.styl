@@ -1,5 +1,14 @@
 @require _colors
+@require _units
 
 .rootElement {
   color $gray
+}
+
+.secondary {
+  $secondaryLambda = .9em
+
+  font-family 'Merriweather'
+  font-size $secondaryLambda
+  line-height ($lambda / $secondaryLambda)
 }

@@ -19,7 +19,7 @@ export default class DonationList extends Component {
             &nbsp;to&nbsp;
             <a href={donation.organization.url}>{donation.organization.text}</a>
           </div>
-          <P>{donation.reason}</P>
+          <P type='secondary'>{donation.reason}</P>
         </div>
       </div>
     );

@@ -56,7 +56,7 @@ export default class Pledge extends Component {
           <div className={styles.otherContainer}>
             <div className={styles.section}>
               <H2 className={styles.heading}>Mission</H2>
-              <P>
+              <P type='secondary'>
                 I was fortunate enough to benefit from great programs when I was
                 young and I want to support organizations that empower youth.
               </P>

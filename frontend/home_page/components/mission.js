@@ -45,9 +45,7 @@ export default class Mission extends Component {
         <H2 className={styles.reasonHeading} type='secondary'>
           {reason.heading}
         </H2>
-        <P className={styles.reasonText}>
-          {reason.text}
-        </P>
+        <P>{reason.text}</P>
       </div>
     );
   }
