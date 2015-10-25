@@ -6,7 +6,7 @@ import styles from './mission.styl';
 const REASONS = [
   {
     icon: 'heart',
-    heading: 'Change that you care about',
+    heading: 'Change you care about',
     text: 'Find the causes that you believe will make the world more special.',
   },
   {
