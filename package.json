@@ -52,7 +52,6 @@
     "rupture": "*",
     "style-loader": "*",
     "stylus-loader": "*",
-    "stylus-type-utils": "*",
     "superagent": "*",
     "transform-loader": "*",
     "url-loader": "*",

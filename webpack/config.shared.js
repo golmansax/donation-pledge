@@ -7,7 +7,6 @@ import autoprefixer from 'autoprefixer-stylus';
 import jeet from 'jeet';
 import nib from 'nib';
 import rupture from 'rupture';
-import stylusTypeUtils from 'stylus-type-utils';
 
 module.exports = {
   output: {
@@ -54,7 +53,7 @@ module.exports = {
   },
 
   stylus: {
-    use: [jeet(), nib(), rupture(), stylusTypeUtils(), autoprefixer()],
+    use: [jeet(), nib(), rupture(), autoprefixer()],
   },
 
   resolve: {

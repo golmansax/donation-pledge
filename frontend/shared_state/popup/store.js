@@ -34,5 +34,7 @@ register((payload) => {
       storage.alert = null;
       emitChange();
       break;
+
+    default:
   }
 });

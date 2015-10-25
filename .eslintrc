@@ -4,6 +4,8 @@
   "rules": {
     "no-process-env": 2,
 
-    "arrow-parens": [2, "always"]
+    "arrow-parens": [2, "always"],
+
+    "indent": [2, 2, { "SwitchCase": 1 }]
   }
 }

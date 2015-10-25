@@ -1,0 +1,21 @@
+@require _colors
+@require _spacing
+
+$alertWidth = unit(20 * $lambda, em)
+
+.root {
+  background-color $white
+  border 1px solid $gray
+  border-radius 5px
+  left 50%
+  margin-left (-1 * $alertWidth / 2)
+  padding $spacing1x
+  position absolute
+  text-align center
+  top $spacing2x
+  width $alertWidth
+}
+
+.message {
+  margin-bottom $spacing1x
+}
