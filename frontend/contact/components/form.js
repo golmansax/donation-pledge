@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { validate as isEmailValid } from 'email-validator';
 import { Button, H3 } from '../../base/components';
 import { create } from '../actions';
+import { alert } from '../../shared_state/popup/actions';
 import styles from './form.styl';
 
 export default class ContactForm extends Component {
