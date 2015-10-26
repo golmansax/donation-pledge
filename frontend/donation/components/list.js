@@ -1,5 +1,5 @@
 import { Component, PropTypes } from 'react';
-import { P } from '../../base/components';
+import { A, P } from '../../base/components';
 import styles from './list.styl';
 
 export default class DonationList extends Component {
@@ -17,7 +17,7 @@ export default class DonationList extends Component {
           <div className={styles.heading}>
             <span className={styles.action}>Donated</span>
             &nbsp;to&nbsp;
-            <a href={donation.organization.url}>{donation.organization.text}</a>
+            <A href={donation.organization.url}>{donation.organization.text}</A>
           </div>
           <P type='secondary'>{donation.reason}</P>
         </div>

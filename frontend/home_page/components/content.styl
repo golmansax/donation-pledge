@@ -3,7 +3,10 @@
 @require _spacing
 
 .mainContainer {
-  background $black url(./main_bg.jpg) no-repeat center -10em
+  $tint = rgba($orange, .2)
+
+  background $black no-repeat center -3.5em
+  background-image linear-gradient($tint, $tint), url(./main_bg.jpg)
   background-size auto 50em
   height unit($lambda * 22, em)
   position relative
@@ -11,7 +14,7 @@
 
 .mainHeading {
   padding $spacing1x $spacingHalf 0
-  border-left .2em solid $purple
+  border-left .2em solid $mainColor
 }
 
 .mainButton {
@@ -27,7 +30,7 @@
   // Not sure why, but it looks a little too high
   $marginTopFudge = .01em
 
-  color $purple
+  color $mainColor
   font-size unit($emphasisScale, em)
   font-weight 700
   line-height ($lambda * 4 / $emphasisScale)
@@ -43,7 +46,7 @@
 }
 
 .mainMessage {
-  background rgba($purple, .9)
+  background rgba($mainColor, .9)
   bottom 0
   color $white
   left 0
