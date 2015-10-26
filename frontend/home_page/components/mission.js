@@ -42,9 +42,7 @@ export default class Mission extends Component {
     return (
       <div className={styles.reason} key={index}>
         <Icon className={styles.reasonIcon} name={reason.icon} size='2x' />
-        <H2 className={styles.reasonHeading} type='secondary'>
-          {reason.heading}
-        </H2>
+        <H2 type='secondary'>{reason.heading}</H2>
         <P>{reason.text}</P>
       </div>
     );
