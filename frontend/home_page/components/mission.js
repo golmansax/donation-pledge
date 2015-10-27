@@ -41,7 +41,7 @@ export default class Mission extends Component {
   _renderReason(reason, index) {
     return (
       <div className={styles.reason} key={index}>
-        <Icon className={styles.reasonIcon} name={reason.icon} size='2x' />
+        <Icon className={styles.reasonIcon} name={reason.icon} />
         <H2 type='secondary'>{reason.heading}</H2>
         <P>{reason.text}</P>
       </div>

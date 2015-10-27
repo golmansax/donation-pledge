@@ -1,6 +1,8 @@
 @require jeet
 @require nib
 @require _colors
+@require _spacing
+@require _units
 
 .column {
   col(1/2)
@@ -15,13 +17,23 @@
   composes column
 }
 
+$iconWidth = unit($lambda * 2, em)
+
 .reason {
-  clearfix()
-  margin-bottom 1.25em
+  margin-bottom unit($lambda * 2, em)
+  margin-left $spacing1x
+  position relative
+  padding-left $iconWidth + $spacing1x
+
+  &:last-child {
+    margin-bottom 0
+  }
 }
 
 .reasonIcon {
-  float left
   color $mainColor
-  margin 0 .5em 1em 1.5em
+  font-size $iconWidth
+  left 0
+  position absolute
+  top 0
 }
