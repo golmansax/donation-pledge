@@ -1,4 +1,5 @@
 @require _colors
+@require _fonts
 @require _units
 
 .rootElement {
@@ -8,7 +9,7 @@
 .secondary {
   $secondaryLambda = .9em
 
-  font-family 'Merriweather'
+  font-family $serifFontFamily
   font-size $secondaryLambda
   line-height ($lambda / $secondaryLambda)
 }

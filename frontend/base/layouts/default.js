@@ -27,11 +27,6 @@ export default class DefaultLayout extends Component {
           <link
             type='text/css'
             rel='stylesheet'
-            href='http://fonts.googleapis.com/css?family=Pacifico:400'
-          />
-          <link
-            type='text/css'
-            rel='stylesheet'
             href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
           />
           <link
