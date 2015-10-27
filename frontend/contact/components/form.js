@@ -46,7 +46,7 @@ export default class ContactForm extends Component {
             placeholder='e.g. Awesome Idea!'
           />
         </div>
-        <Button onClick={this._submitForm.bind(this)} type='main'>
+        <Button onClick={this._submitForm.bind(this)} type='outline'>
           Send!
         </Button>
       </div>

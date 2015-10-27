@@ -2,13 +2,13 @@
 @require _spacing
 
 .rootElement {
-  border .1em transparent solid
+  border .15em transparent solid
   border-radius .5em
   cursor pointer
   display inline-block
   padding $spacingHalf $spacing1x
   text-align center
-  transition background-color 300ms ease-out
+  transition background-color 300ms ease-out, opacity 300ms ease-out
   user-select none
 }
 
@@ -19,5 +19,16 @@
 
   &:hover {
     background-color $darkerMainColor
+  }
+}
+
+.outline {
+  composes rootElement
+  background-color transparent
+  border-color $white
+
+  &:hover {
+    background-color $darkerMainColor
+    opacity .8
   }
 }

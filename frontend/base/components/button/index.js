@@ -27,5 +27,5 @@ Button.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   className: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['main', 'outline']),
 };
