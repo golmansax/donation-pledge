@@ -1,6 +1,7 @@
-@require jeet
+@require '_frontend/styles/grid'
+@require '_frontend/styles/spacing'
+@require '_frontend/styles/units'
 
 .rootElement {
-  center(60rem, 1rem)
-  padding 0 2rem
+  center(unit($containerRatio * $lambda, rem), $spacing1x)
 }
