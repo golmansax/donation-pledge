@@ -5,8 +5,11 @@ import AssetsPlugin from 'assets-webpack-plugin';
 import sharedConfig from './config.shared';
 import path from 'path';
 import webpack from 'webpack';
+import { isProduction } from '../server/config';
 
 module.exports = {
+  devtool: sharedConfig.devtool,
+
   entry: {
     home_page: './frontend/home_page/server_entry.js',
   },
@@ -38,7 +41,9 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('[name].[chunkhash].css', { allChunks: true }),
+    new ExtractTextPlugin(`[name].${isProduction() ? '.[chunkhash]' : ''}.css`, {
+      allChunks: true
+    }),
     new AssetsPlugin({
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.server.json',

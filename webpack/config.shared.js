@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 import path from 'path';
-import { NODE_ENV } from '../server/config';
+import { isProduction } from '../server/config';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer-stylus';
 import jeet from 'jeet';
@@ -9,6 +9,8 @@ import nib from 'nib';
 import rupture from 'rupture';
 
 module.exports = {
+  devtool: 'eval',
+
   output: {
     path: path.resolve(__dirname, 'build'),
   },
@@ -43,13 +45,13 @@ module.exports = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file?hash=sha512&digest=hex&name=[path][name].[hash].[ext]',
+          `file?hash=sha512&digest=hex&name=[path][name]${isProduction() ? '.[hash]' : ''}.[ext]`,
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
         ],
       },
     ],
 
-    postLoaders: NODE_ENV === 'production' ? [{ loader: 'transform?envify' }] : undefined,
+    postLoaders: isProduction() ? [{ loader: 'transform?envify' }] : undefined,
   },
 
   stylus: {

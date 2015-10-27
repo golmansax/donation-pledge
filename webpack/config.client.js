@@ -5,15 +5,18 @@ import AssetsPlugin from 'assets-webpack-plugin';
 import sharedConfig from './config.shared';
 import path from 'path';
 import webpack from 'webpack';
+import { isProduction } from '../server/config';
 
 module.exports = {
+  devtool: sharedConfig.devtool,
+
   entry: {
     home_page: './frontend/home_page/client_entry.js',
   },
 
   output: {
     path: sharedConfig.output.path,
-    filename: '[name].client_entry.[chunkhash].js',
+    filename: `[name].client_entry${isProduction() ? '.[chunkhash]' : ''}.js`,
   },
 
   module: {

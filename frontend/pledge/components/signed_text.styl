@@ -1,5 +1,6 @@
 @require '_frontend/styles/colors'
 @require '_frontend/styles/fonts'
+@require '_frontend/styles/units'
 
 .rootElement {
   position relative
@@ -10,10 +11,14 @@
   margin 0 .5em
 }
 
+$signedTextRatio = .9
+
 .text {
   color $mainColor
   display inline-block
   font-family $serifFontFamily
+  font-size unit($signedTextRatio, em)
+  line-height ($lambda / $signedTextRatio)
 }
 
 @keyframes cursorBlink {
