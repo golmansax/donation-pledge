@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { Container, H2, Icon, P } from '../../base/components';
 import { PledgeBanner } from '../../pledge/components';
 import styles from './mission.styl';
@@ -22,29 +21,25 @@ const REASONS = [
   },
 ];
 
-export default class Mission extends Component {
-  render() {
-    return (
-      <Container>
-        <div className={styles.pledgeColumn}>
-          <div className={styles.align}>
-          <div id='pledge-banner'><PledgeBanner /></div>
-        </div>
-        </div>
-        <div className={styles.reasonColumn}>
-          {REASONS.map(this._renderReason)}
-        </div>
-      </Container>
-    );
-  }
+const _renderReason = (reason, index) => (
+  <div className={styles.reason} key={index}>
+    <Icon className={styles.reasonIcon} name={reason.icon} />
+    <H2 type='secondary'>{reason.heading}</H2>
+    <P>{reason.text}</P>
+  </div>
+);
 
-  _renderReason(reason, index) {
-    return (
-      <div className={styles.reason} key={index}>
-        <Icon className={styles.reasonIcon} name={reason.icon} />
-        <H2 type='secondary'>{reason.heading}</H2>
-        <P>{reason.text}</P>
-      </div>
-    );
-  }
-}
+const Mission = () => (
+  <Container>
+    <div className={styles.pledgeColumn}>
+      <div className={styles.align}>
+      <div id='pledge-banner'><PledgeBanner /></div>
+    </div>
+    </div>
+    <div className={styles.reasonColumn}>
+      {REASONS.map(_renderReason)}
+    </div>
+  </Container>
+);
+
+export default Mission;
