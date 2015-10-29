@@ -1,22 +1,20 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import classNames from 'classnames';
 import { H3 } from '../';
 import styles from './button.styl';
 
-export default class Button extends Component {
-  render() {
-    const myClass = classNames({
-      [styles[this.props.type]]: true,
-      [this.props.className]: !!this.props.className,
-    });
-
-    return (
-      <button {...this.props} className={myClass}>
-        <H3>{this.props.children}</H3>
-      </button>
-    );
-  }
+function _getClass({ type, className }) {
+  return classNames({
+    [styles[type]]: true,
+    [className]: !!className,
+  });
 }
+
+const Button = (props) => (
+  <button {...props} className={_getClass(props)}>
+    <H3>{props.children}</H3>
+  </button>
+);
 
 Button.defaultProps = { type: 'main' };
 
@@ -29,3 +27,5 @@ Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(['main', 'outline']),
 };
+
+export default Button;
