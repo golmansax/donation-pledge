@@ -3,16 +3,16 @@ import classNames from 'classnames';
 import { H3 } from '../';
 import styles from './button.styl';
 
-function _getClass({ type, className }) {
+function getClass({ type, className }) {
   return classNames({
     [styles[type]]: true,
     [className]: !!className,
   });
 }
 
-const Button = (props) => (
-  <button {...props} className={_getClass(props)}>
-    <H3>{props.children}</H3>
+const Button = ({ type, className, children, ...otherProps }) => (
+  <button {...otherProps} className={getClass({ type, className })}>
+    <H3>{children}</H3>
   </button>
 );
 
