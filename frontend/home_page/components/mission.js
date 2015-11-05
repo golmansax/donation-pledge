@@ -29,7 +29,7 @@ const _renderReason = (reason, index) => (
   </div>
 );
 
-const Mission = () => (
+const Mission = () => ( // eslint-disable-line react/no-multi-comp
   <Container>
     <div className={styles.pledgeColumn}>
       <div className={styles.align}>
