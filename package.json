@@ -12,8 +12,11 @@
   },
   "main": "server/entry.js",
   "devDependencies": {
+    "arrow-mocha": "*",
     "babel-eslint": "*",
     "dotenv": "*",
+    "chai": "*",
+    "dirty-chai": "*",
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-config-golmansax": "*",
@@ -22,7 +25,8 @@
     "mocha": "*",
     "react-hot-loader": "*",
     "stylint": "*",
-    "travis-lint": "*"
+    "travis-lint": "*",
+    "zombie": "*"
   },
   "dependencies": {
     "animated-scrollto": "*",

@@ -1,4 +1,4 @@
-.PHONY: development build eslint production watch
+.PHONY: development build eslint production watch test
 
 development:
 	nodemon --watch server --watch node_modules --watch webpack/build server/entry.js
@@ -11,6 +11,9 @@ eslint:
 
 production:
 	node server/entry.js
+
+test:
+	./node_modules/.bin/mocha --compilers js:babel/register -R spec test/**/*
 
 watch:
 	./node_modules/.bin/webpack --progress --colors --watch -d
