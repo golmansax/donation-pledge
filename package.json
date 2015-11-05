@@ -63,6 +63,7 @@
   },
   "scripts": {
     "start": "make development",
-    "postinstall": "./scripts/npm_postinstall.sh"
+    "postinstall": "./scripts/npm_postinstall.sh",
+    "test": "make test"
   }
 }
