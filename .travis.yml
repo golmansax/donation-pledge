@@ -4,15 +4,12 @@ env:
 - NODE_ENV=production
 install:
 - npm install
-- npm install --only=dev
+- NODE_ENV=development npm install --only=dev
 script:
 - travis-lint .travis.yml
 - make eslint
 - make stylint
 - make test
-cache:
-  directories:
-  - node_modules
 deploy:
   provider: heroku
   strategy: git
