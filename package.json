@@ -24,7 +24,7 @@
     "http-proxy": "*",
     "mocha": "*",
     "react-hot-loader": "*",
-    "stylint": "*",
+    "stylint": "< 1.3",
     "travis-lint": "*",
     "zombie": "*"
   },

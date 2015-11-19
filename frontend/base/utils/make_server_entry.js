@@ -2,9 +2,9 @@ import { PropTypes } from 'react';
 import { loadAssets } from '../../shared_state/asset_store';
 
 export default function makeServerEntry(MyComponent) {
-  const ServerComponent = ({ assets, ...props}) => {
+  const ServerComponent = ({ assets, ...otherProps}) => {
     loadAssets(assets);
-    return <MyComponent {...props} />;
+    return <MyComponent {...otherProps} />;
   };
 
   ServerComponent.propTypes = {

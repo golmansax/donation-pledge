@@ -1,6 +1,8 @@
 {
   "extends": "golmansax",
 
+  "parser": "babel-eslint",
+
   "rules": {
     "no-process-env": 2,
 
