@@ -1,7 +1,3 @@
 {
-  "extends": "golmansax",
-
-  "rules": {
-    "indent": [2, 2, { "SwitchCase": 1 }]
-  }
+  "extends": "golmansax"
 }
