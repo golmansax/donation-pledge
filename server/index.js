@@ -13,6 +13,7 @@ import {
 } from './config';
 import webpackAssets from '../webpack/assets';
 import HomePage from '../webpack/build/home_page.server_entry';
+import UserPage from '../webpack/build/user_page.server_entry';
 
 const server = express();
 
@@ -21,6 +22,11 @@ server.use(bodyParser.urlencoded({ extended: false }));
 
 server.get('/', (req, res) => {
   const page = renderToStaticMarkup(<HomePage assets={webpackAssets} />);
+  res.send(`<!DOCTYPE html>${page}`);
+});
+
+server.get('/users/golmansax', (req, res) => {
+  const page = renderToStaticMarkup(<UserPage assets={webpackAssets} />);
   res.send(`<!DOCTYPE html>${page}`);
 });
 

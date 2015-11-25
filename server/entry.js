@@ -1,2 +1,10 @@
+/* eslint-disable no-console, no-var */
+
+var PORT;
+
 require('babel/register');
-require('./').listen(require('./config').PORT);
+PORT = require('./config').PORT;
+
+require('./').listen(PORT, () => {
+  console.log(`golmansax/my-impact-pledge listening on port ${PORT}`);
+});

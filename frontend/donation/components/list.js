@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import { A, P } from '../../base/components';
 import styles from './list.styl';
 

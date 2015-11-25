@@ -12,6 +12,7 @@ module.exports = {
 
   entry: {
     home_page: './frontend/home_page/server_entry.js',
+    user_page: './frontend/user_page/server_entry.js',
   },
 
   output: {
