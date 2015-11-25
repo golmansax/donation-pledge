@@ -4,8 +4,9 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import sharedConfig from './config.shared';
 import path from 'path';
-import webpack from 'webpack';
+import { ProvidePlugin, optimize } from 'webpack';
 import { isProduction } from '../server/config';
+const { CommonsChunkPlugin } = optimize;
 
 module.exports = {
   devtool: sharedConfig.devtool,
@@ -41,7 +42,8 @@ module.exports = {
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.client.json',
     }),
-    new webpack.ProvidePlugin({ React: 'react' }),
+    new ProvidePlugin({ React: 'react' }),
+    new CommonsChunkPlugin('commons', `commons${isProduction() ? '.[chunkhash]' : ''}.js`),
   ],
 
   stylus: sharedConfig.stylus,

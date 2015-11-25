@@ -42,7 +42,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin(`[name].${isProduction() ? '.[chunkhash]' : ''}.css`, {
+    new ExtractTextPlugin(`[name]${isProduction() ? '.[chunkhash]' : ''}.css`, {
       allChunks: true,
     }),
     new AssetsPlugin({

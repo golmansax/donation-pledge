@@ -44,6 +44,7 @@ const DefaultLayout = ({ children, title, name }) => (
     <body>
       {children}
       <div id='popupBackdrop'><PopupBackdrop /></div>
+      <script type='text/javascript' src={`/${getJsFile('commons')}`} />
       <script type='text/javascript' src={`/${getJsFile(name)}`} />
     </body>
   </html>
