@@ -12,7 +12,6 @@ const DefaultLayout = ({ children, title, name }) => (
   <html>
     <head>
       <title>{title}</title>
-      <base href='https://myimpactpledge.com' />
       <link
         type='text/css'
         rel='stylesheet'
