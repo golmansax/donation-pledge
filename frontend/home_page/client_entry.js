@@ -1,6 +1,8 @@
 import { render } from 'react-dom';
 import { HomePageContent } from './components';
-import { PopupBackdrop } from '../shared_state/popup/components';
+import { makeClientEntry } from '../base/utils';
 
-render(<PopupBackdrop />, document.getElementById('popupBackdrop'));
-render(<HomePageContent />, document.getElementById('content'));
+render(
+  makeClientEntry(<HomePageContent />),
+  document.getElementById('content')
+);
