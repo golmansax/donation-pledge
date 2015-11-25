@@ -12,6 +12,7 @@ const DefaultLayout = ({ children, title, name }) => (
   <html>
     <head>
       <title>{title}</title>
+      <base href='https://myimpactpledge.com' />
       <link
         type='text/css'
         rel='stylesheet'
@@ -20,17 +21,17 @@ const DefaultLayout = ({ children, title, name }) => (
       <link
         type='text/css'
         rel='stylesheet'
-        href='http://fonts.googleapis.com/css?family=Lato:400,700'
+        href='https://fonts.googleapis.com/css?family=Lato:400,700'
       />
       <link
         type='text/css'
         rel='stylesheet'
-        href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
+        href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700'
       />
       <link
         type='text/css'
         rel='stylesheet'
-        href='http://fonts.googleapis.com/css?family=Merriweather:400,700'
+        href='https://fonts.googleapis.com/css?family=Merriweather:400,700'
       />
       <link
         rel='stylesheet'
