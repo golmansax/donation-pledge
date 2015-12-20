@@ -7,7 +7,7 @@ import { beforeEach, afterEach, it } from 'arrow-mocha/es5';
 
 chai.use(dirtyChai);
 
-describe('server', function() {
+describe('server', function () {
   this.timeout(9000);
 
   beforeEach(() => {

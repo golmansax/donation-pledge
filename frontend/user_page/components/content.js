@@ -1,4 +1,4 @@
-import { Container, H1 } from '../../base/components';
+import { Container } from '../../base/components';
 import { Pledge } from '../../pledge/components';
 import styles from './content.styl';
 
