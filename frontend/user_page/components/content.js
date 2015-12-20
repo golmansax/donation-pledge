@@ -3,13 +3,17 @@ import { Pledge } from '../../pledge/components';
 import styles from './content.styl';
 
 const UserPageContent = () => (
-  <div className={styles.section}>
-    <Container>
-      <H1 type='secondary' className={styles.sectionHeading}>
-        See what others are pledging
-      </H1>
-      <Pledge />
-    </Container>
+  <div>
+    <div className={styles.navbar}>
+      <Container>
+        My Impact Pledge
+      </Container>
+    </div>
+    <div className={styles.section}>
+      <Container>
+        <Pledge />
+      </Container>
+    </div>
   </div>
 );
 

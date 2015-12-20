@@ -32,7 +32,7 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          optional: ['runtime'],
+          // plugins: ['transform-runtime'],
           compact: false,
         },
       },

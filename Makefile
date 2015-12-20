@@ -13,7 +13,7 @@ production:
 	node server/entry.js
 
 test:
-	./node_modules/.bin/mocha --compilers js:babel/register -R spec test/**/*
+	./node_modules/.bin/mocha --compilers js:babel-core/register -R spec test/**/*
 
 watch:
 	./node_modules/.bin/webpack --progress --colors --watch -d

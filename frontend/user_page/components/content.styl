@@ -2,46 +2,12 @@
 @require '_frontend/styles/colors'
 @require '_frontend/styles/spacing'
 
-.headingEmphasis {
-  // TODO combine this with heading
-  $emphasisScale = 2.25 * 3
-
-  // Not sure why, but it looks a little too high
-  $marginTopFudge = .01em
-
-  color $mainColor
-  font-size unit($emphasisScale, em)
-  font-weight 700
-  line-height ($lambda * 4 / $emphasisScale)
-  margin (-1 * $marginTopFudge) 0 $marginTopFudge
-}
-
 .section {
   padding $spacing3x 0
 }
 
-.sectionHeading {
-  margin-bottom $spacing1x
-}
-
-.mainMessage {
-  background rgba($mainColor, .9)
-  bottom 0
+.navbar {
+  background-color $mainColor
   color $white
-  left 0
-  padding $spacing1x 0
-  position absolute
-  text-align center
-  width 100%
-}
-
-.contactSection {
-  composes section
-  background $mainColor
-  color $white
-}
-
-.missionSection {
-  composes section
-  background $white
+  height unit($lambda * 2, rem)
 }

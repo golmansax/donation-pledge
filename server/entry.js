@@ -2,9 +2,9 @@
 
 var PORT;
 
-require('babel/register');
+require('babel-core/register');
 PORT = require('./config').PORT;
 
-require('./').listen(PORT, () => {
+require('./').default.listen(PORT, () => {
   console.log(`golmansax/my-impact-pledge listening on port ${PORT}`);
 });

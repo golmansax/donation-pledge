@@ -26,9 +26,10 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel',
+        exclude: /node_modules/,
         query: {
           // optional: ['runtime'],
-          plugins: 'babel-plugin-object-assign',
+          plugins: ['transform-object-assign'],
         },
       },
     ].concat(sharedConfig.module.loaders),
