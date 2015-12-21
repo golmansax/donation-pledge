@@ -1,10 +1,8 @@
-import { Container, A, H1 } from '../../base/components';
-import { BrandLogo } from '../../brand/components';
-import { Pledge } from '../../pledge/components';
-import styles from './content.styl';
+import { BrandNavbar } from '../../brand/components';
 
 const LoginPageContent = () => (
   <div>
+    <BrandNavbar />
     Log In
   </div>
 );

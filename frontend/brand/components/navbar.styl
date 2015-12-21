@@ -1,0 +1,22 @@
+@require '_frontend/styles/colors'
+@require '_frontend/styles/spacing'
+
+.navbar {
+  background-color $mainColor
+  color $white
+}
+
+.navbarItem {
+  display inline-block
+  margin $spacingHalf 0
+}
+
+.navbarLink {
+  composes navbarItem
+  float right
+}
+
+.navbarLogo {
+  composes navbarItem
+  float left
+}

@@ -1,16 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
 import { DEFAULT_EMAIL, MAILGUN_API_KEY, MAILGUN_DOMAIN } from './config';
-import webpackAssets from '../webpack/assets';
 import {
   HomeRouteHandler,
   UserRouteHandler,
-  LoginRouteHandler
+  LoginRouteHandler,
 } from './route_handlers';
 import { logError, sendErrorToClient } from './error_handlers';
 
