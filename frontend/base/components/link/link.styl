@@ -1,10 +1,26 @@
 @require '_frontend/styles/colors'
 
 .rootElement {
-  color $mainColor
+  text-decoration none
   transition color 300ms ease-out
+}
+
+.main {
+  composes rootElement
+
+  color $mainColor
 
   &:hover {
     color $darkerMainColor
+  }
+}
+
+.inherit {
+  composes rootElement
+
+  color inherit
+
+  &:hover {
+    opacity .8
   }
 }

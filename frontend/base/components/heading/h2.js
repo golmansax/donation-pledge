@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import Heading from './heading';
 
 const H2 = ({ children, ...otherProps }) => (

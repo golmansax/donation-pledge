@@ -1,4 +1,5 @@
 import { Container, H1 } from '../../base/components';
+import { BrandLogo } from '../../brand/components';
 import { Pledge } from '../../pledge/components';
 import styles from './content.styl';
 
@@ -6,7 +7,7 @@ const UserPageContent = () => (
   <div>
     <div className={styles.navbar}>
       <Container>
-        My Impact Pledge
+        <BrandLogo className={styles.navbarLogo} />
       </Container>
     </div>
     <Container>

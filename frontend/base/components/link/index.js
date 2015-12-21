@@ -1,19 +1,22 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './link.styl';
 
-export default class Link extends Component {
-  render() {
-    const myClass = classNames({
-      [styles.rootElement]: true,
-      [this.props.className]: !!this.props.className,
-    });
+const getClass = ({ className, design }) => {
+  return classNames({
+    [styles.rootElement]: true,
+    [styles[design]]: !!styles[design],
+    [className]: !!className,
+  });
+};
 
-    return (
-      <a {...this.props} className={myClass}>{this.props.children}</a>
-    );
-  }
-}
+const Link = ({ children, className, design, ...otherProps }) => (
+  <a {...otherProps} className={getClass({ className, design })}>{children}</a>
+);
+
+Link.defaultProps = {
+  design: 'main',
+};
 
 Link.propTypes = {
   children: PropTypes.oneOfType([
@@ -22,4 +25,7 @@ Link.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   className: PropTypes.string,
+  design: PropTypes.oneOf(['main', 'inherit']).isRequired,
 };
+
+export default Link;
