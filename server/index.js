@@ -9,7 +9,7 @@ import {
   UserRouteHandler,
   LoginRouteHandler,
 } from './route_handlers';
-import { logError, sendErrorToClient } from './error_handlers';
+import { logError, handle500 } from './error_handlers';
 
 const server = express();
 
@@ -17,7 +17,7 @@ server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
 server.use(bodyParser.urlencoded({ extended: false }));
 
 server.get('/', HomeRouteHandler);
-server.get('/pledgers/golmansax', UserRouteHandler);
+server.get('/pledgers/:id', UserRouteHandler);
 server.get('/log-in', LoginRouteHandler);
 
 server.post('/contacts', (req, res, next) => {
@@ -43,6 +43,6 @@ server.post('/contacts', (req, res, next) => {
 });
 
 server.use(logError);
-server.use(sendErrorToClient);
+server.use(handle500);
 
 export default server;

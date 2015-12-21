@@ -3,7 +3,7 @@
 var PORT;
 
 require('babel-polyfill');
-require('babel-core/register');
+require('../lib/setup');
 PORT = require('./config').PORT;
 
 // Use React global so we don't need to require React for JSX

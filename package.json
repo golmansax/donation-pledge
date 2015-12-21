@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "animated-scrollto": "*",
+    "app-module-path": "*",
     "assets-webpack-plugin": "*",
     "autoprefixer-stylus": "*",
     "babel-core": "^6.1.21",

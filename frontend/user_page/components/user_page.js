@@ -1,16 +1,21 @@
+import { PropTypes } from 'react';
 import { DefaultLayout } from '../../base/layouts';
 import UserPageContent from './content';
 
 const DESCRIPTION = '';
 
-const UserPage = () => (
+const UserPage = ({ pledger }) => (
   <DefaultLayout
-    title='Holman Gao’s Impact Pledge'
+    title={`${pledger.fullName}’s Impact Pledge`}
     name='user_page'
     description={DESCRIPTION}
     >
-    <div id='content'><UserPageContent /></div>
+    <div id='content'><UserPageContent pledger={pledger} /></div>
   </DefaultLayout>
 );
+
+UserPage.propTypes = {
+  pledger: PropTypes.object.isRequired,
+};
 
 export default UserPage;

@@ -5,9 +5,12 @@ export const logError = (err, req, res, next) => {
   next(err);
 };
 
-export const sendErrorToClient = (err, req, res, next) => {
+export const handle500 = (err, req, res, next) => {
   if (res.headersSent) { return next(err); }
-
   if (isDevelopment()) { Reflect.deleteProperty(err, 'stack'); }
   res.status(err.statusCode || 500).json({ error: err.message });
+};
+
+export const handle404 = (req, res) => {
+  res.status(404).send('Sorry, we cannot find the page you are looking for.');
 };

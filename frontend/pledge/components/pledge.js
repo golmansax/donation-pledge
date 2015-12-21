@@ -1,3 +1,4 @@
+import { PropTypes } from 'react';
 import SignedText from './signed_text';
 import { H2, P } from '../../base/components';
 import { DonationList } from '../../donation/components';
@@ -28,5 +29,10 @@ const Pledge = ({ pledge, pledger }) => (
     </div>
   </div>
 );
+
+Pledge.propTypes = {
+  pledger: PropTypes.object.isRequired,
+  pledge: PropTypes.object.isRequired,
+};
 
 export default Pledge;
