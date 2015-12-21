@@ -13,7 +13,7 @@ function getClass({ type, className, block, rounded }) {
 }
 
 const Button = ({
-  block, type, className, children, rounded, ...otherProps
+  block, type, className, children, rounded, ...otherProps,
 }) => (
   <button
     {...otherProps}
