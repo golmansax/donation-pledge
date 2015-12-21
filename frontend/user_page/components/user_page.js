@@ -2,13 +2,16 @@ import { PropTypes } from 'react';
 import { DefaultLayout } from '../../base/layouts';
 import UserPageContent from './content';
 
-const DESCRIPTION = '';
+const getDescription = (pledger) => {
+  const firstPledge = pledger.pledges[0];
+  return `${firstPledge.pledgeStatement}  ${firstPledge.mission}`;
+};
 
 const UserPage = ({ pledger }) => (
   <DefaultLayout
     title={`${pledger.fullName}’s Impact Pledge`}
     name='user_page'
-    description={DESCRIPTION}
+    description={getDescription(pledger)}
     >
     <div id='content'><UserPageContent pledger={pledger} /></div>
   </DefaultLayout>

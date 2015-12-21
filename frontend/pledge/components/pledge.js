@@ -31,8 +31,8 @@ const Pledge = ({ pledge, pledger }) => (
 );
 
 Pledge.propTypes = {
-  pledger: PropTypes.object.isRequired,
   pledge: PropTypes.object.isRequired,
+  pledger: PropTypes.object.isRequired,
 };
 
 export default Pledge;
