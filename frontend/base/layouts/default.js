@@ -9,13 +9,18 @@ const getJsFile = (name) => getAsset(`${name}.js`);
 
 const getTitle = ({ title }) => {
   if (!title) {
-    return 'My Impact Pledge – Pledge to Make a Recurring Impact';
+    return 'My Impact Pledge – Create your own recurring impact';
   }
 
   return `${title} | My Impact Pledge`;
 };
 
-const DefaultLayout = ({ children, title, name }) => (
+const renderDescription = (description) => {
+  if (!description) { return null; }
+  return <meta name='description' content={description} />;
+};
+
+const DefaultLayout = ({ children, title, name, description }) => (
   /* eslint-disable max-len */
   <html>
     <head>
@@ -48,6 +53,7 @@ const DefaultLayout = ({ children, title, name }) => (
       <link rel='icon' href={favicon} />
       <meta name='viewport' content='width=device-width, user-scalable=no' />
       <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+      {renderDescription(description)}
     </head>
     <body>
       {children}
