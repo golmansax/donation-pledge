@@ -641,6 +641,11 @@
       "from": "babel-plugin-undefined-to-void@>=1.1.6 <2.0.0",
       "resolved": "https://registry.npmjs.org/babel-plugin-undefined-to-void/-/babel-plugin-undefined-to-void-1.1.6.tgz"
     },
+    "babel-polyfill": {
+      "version": "6.3.14",
+      "from": "babel-polyfill@*",
+      "resolved": "https://registry.npmjs.org/babel-polyfill/-/babel-polyfill-6.3.14.tgz"
+    },
     "babel-preset-es2015": {
       "version": "6.3.13",
       "from": "babel-preset-es2015@*",
@@ -670,6 +675,11 @@
       "version": "6.3.13",
       "from": "babel-preset-stage-3@>=6.3.13 <7.0.0",
       "resolved": "https://registry.npmjs.org/babel-preset-stage-3/-/babel-preset-stage-3-6.3.13.tgz"
+    },
+    "babel-regenerator-runtime": {
+      "version": "6.3.13",
+      "from": "babel-regenerator-runtime@>=6.3.13 <7.0.0",
+      "resolved": "https://registry.npmjs.org/babel-regenerator-runtime/-/babel-regenerator-runtime-6.3.13.tgz"
     },
     "babel-register": {
       "version": "6.3.13",
@@ -1087,7 +1097,7 @@
     },
     "core-js": {
       "version": "1.2.6",
-      "from": "core-js@>=1.0.0 <2.0.0",
+      "from": "core-js@*",
       "resolved": "https://registry.npmjs.org/core-js/-/core-js-1.2.6.tgz"
     },
     "core-util-is": {
