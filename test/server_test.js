@@ -1,6 +1,5 @@
 import '../lib/setup';
 import chai, { expect } from 'chai';
-import React from 'react';
 import Browser from 'zombie';
 import server from '../server';
 import dirtyChai from 'dirty-chai';
