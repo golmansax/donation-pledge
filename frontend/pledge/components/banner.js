@@ -21,7 +21,7 @@ const INPUT_DATA = {
 };
 const INPUT_ORDER = ['impact', 'howOften'];
 
-export default class PledgeBanner extends Component {
+class PledgeBanner extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -138,3 +138,5 @@ export default class PledgeBanner extends Component {
     }, 1000);
   }
 }
+
+export default PledgeBanner;

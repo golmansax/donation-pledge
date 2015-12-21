@@ -25,7 +25,7 @@ server.get('/', (req, res) => {
   res.send(`<!DOCTYPE html>${page}`);
 });
 
-server.get('/users/golmansax', (req, res) => {
+server.get('/pledgers/golmansax', (req, res) => {
   const page = renderToStaticMarkup(<UserPage assets={webpackAssets} />);
   res.send(`<!DOCTYPE html>${page}`);
 });

@@ -1,11 +1,9 @@
 import { Component, PropTypes } from 'react';
 import Heading from './heading';
 
-export default class H2 extends Component {
-  render() {
-    return <Heading {...this.props} size='h2'>{this.props.children}</Heading>;
-  }
-}
+const H2 = ({ children, ...otherProps }) => (
+  <Heading {...otherProps} size='h2'>{children}</Heading>
+);
 
 H2.propTypes = {
   children: PropTypes.oneOfType([
@@ -15,3 +13,5 @@ H2.propTypes = {
   ]).isRequired,
   className: PropTypes.string,
 };
+
+export default H2;

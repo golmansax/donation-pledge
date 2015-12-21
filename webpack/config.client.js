@@ -43,7 +43,7 @@ module.exports = {
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.client.json',
     }),
-    new ProvidePlugin({ React: 'react' }),
+    new ProvidePlugin({ React: 'react', Reflect: 'core-js/es6/reflect' }),
     new CommonsChunkPlugin('commons', `commons${isProduction() ? '.[chunkhash]' : ''}.js`),
   ],
 

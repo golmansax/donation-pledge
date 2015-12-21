@@ -34,39 +34,37 @@ const DONATIONS = [
   },
 ];
 
-export default class Pledge extends Component {
-  render() {
-    return (
-      <div className={styles.rootElement}>
-        <div className={styles.pledge}>
-          I pledge to
-          <SignedText category='impact'>
-            donate to youth education programs
-          </SignedText>
-          every
-          <SignedText category='how often?'>
-            year on my birthday
-          </SignedText>
-        </div>
-        <div className={styles.container}>
-          <div className={styles.userImageContainer}>
-            <div className={styles.userImage} />
-            <SignedText category='you'>Holman Gao</SignedText>
-          </div>
-          <div className={styles.otherContainer}>
-            <div className={styles.section}>
-              <H2>Mission</H2>
-              <P type='secondary'>
-                I was fortunate enough to benefit from great programs when I was
-                young and I want to support organizations that empower youth.
-              </P>
-            </div>
-
-            <H2>My Actions</H2>
-            <DonationList donations={DONATIONS} />
-          </div>
-        </div>
+const Pledge = () => (
+  <div className={styles.rootElement}>
+    <div className={styles.pledge}>
+      I pledge to
+      <SignedText category='impact'>
+        donate to youth education programs
+      </SignedText>
+      every
+      <SignedText category='how often?'>
+        year on my birthday
+      </SignedText>
+    </div>
+    <div className={styles.container}>
+      <div className={styles.userImageContainer}>
+        <div className={styles.userImage} />
+        <SignedText category='you'>Holman Gao</SignedText>
       </div>
-    );
-  }
-}
+      <div className={styles.otherContainer}>
+        <div className={styles.section}>
+          <H2>Mission</H2>
+          <P type='secondary'>
+            I was fortunate enough to benefit from great programs when I was
+            young and I want to support organizations that empower youth.
+          </P>
+        </div>
+
+        <H2>My Actions</H2>
+        <DonationList donations={DONATIONS} />
+      </div>
+    </div>
+  </div>
+);
+
+export default Pledge;

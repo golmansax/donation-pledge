@@ -2,19 +2,17 @@ import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './paragraph.styl';
 
-export default class Paragraph extends Component {
-  render() {
-    const myClass = classNames({
-      [styles.rootElement]: true,
-      [styles[this.props.type]]: true,
-      [this.props.className]: !!this.props.className,
-    });
+const getClass = ({ type, className }) => {
+  return classNames({
+    [styles.rootElement]: true,
+    [styles[type]]: true,
+    [className]: !!className,
+  });
+};
 
-    return (
-      <div className={myClass}>{this.props.children}</div>
-    );
-  }
-}
+const Paragraph = ({ children, className, type }) => (
+  <div className={getClass({ type, className })}>{children}</div>
+);
 
 Paragraph.defaultProps = {
   type: 'main',
@@ -29,3 +27,5 @@ Paragraph.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
 };
+
+export default Paragraph;

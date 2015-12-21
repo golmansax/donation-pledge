@@ -2,19 +2,17 @@ import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './icon.styl';
 
-export default class Icon extends Component {
-  render() {
-    const myClass = classNames({
-      [`lnr lnr-${this.props.name}`]: true,
-      [styles[`size${this.props.size}`]]: true,
-      [this.props.className]: !!this.props.className,
-    });
+const getClass = ({ name, size, className }) => {
+  return classNames({
+    [`lnr lnr-${name}`]: true,
+    [styles[`size${size}`]]: true,
+    [className]: !!className,
+  });
+};
 
-    return (
-      <span className={myClass} />
-    );
-  }
-}
+const Icon = ({ name, size, className }) => (
+  <span className={getClass({ name, size, className })} />
+);
 
 Icon.defaultProps = { size: '1x' };
 
@@ -23,3 +21,5 @@ Icon.propTypes = {
   name: PropTypes.string.isRequired,
   size: PropTypes.oneOf(['1x', '2x']),
 };
+
+export default Icon;

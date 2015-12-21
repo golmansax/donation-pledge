@@ -1,3 +1,2 @@
-import Pledge from './pledge';
-import PledgeBanner from './banner';
-export { Pledge, PledgeBanner };
+export Pledge from './pledge';
+export PledgeBanner from './banner';

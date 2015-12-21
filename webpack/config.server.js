@@ -4,7 +4,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import AssetsPlugin from 'assets-webpack-plugin';
 import sharedConfig from './config.shared';
 import path from 'path';
-import webpack from 'webpack';
+import { ProvidePlugin } from 'webpack';
 import { isProduction } from '../server/config';
 
 module.exports = {
@@ -49,7 +49,7 @@ module.exports = {
       path: path.join(__dirname, 'build'),
       filename: 'webpack_assets.server.json',
     }),
-    new webpack.ProvidePlugin({ React: 'react' }),
+    new ProvidePlugin({ React: 'react' }),
   ],
 
   stylus: sharedConfig.stylus,

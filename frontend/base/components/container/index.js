@@ -2,18 +2,16 @@ import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './container.styl';
 
-export default class Container extends Component {
-  render() {
-    const myClass = classNames({
-      [styles.rootElement]: true,
-      [this.props.className]: !!this.props.className,
-    });
+const getClass = ({ className }) => {
+  return classNames({
+    [styles.rootElement]: true,
+    [className]: !!className,
+  });
+};
 
-    return (
-      <div className={myClass}>{this.props.children}</div>
-    );
-  }
-}
+const Container = ({ className, children }) => (
+  <div className={getClass({ className })}>{children}</div>
+);
 
 Container.propTypes = {
   children: PropTypes.oneOfType([
@@ -23,3 +21,5 @@ Container.propTypes = {
   ]).isRequired,
   className: PropTypes.string,
 };
+
+export default Container;

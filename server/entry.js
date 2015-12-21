@@ -2,6 +2,7 @@
 
 var PORT;
 
+require('babel-polyfill');
 require('babel-core/register');
 PORT = require('./config').PORT;
 
