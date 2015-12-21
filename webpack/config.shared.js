@@ -62,5 +62,7 @@ module.exports = {
     alias: {
       _webpack_assets: path.resolve(__dirname, '_webpack_assets.js'),
     },
+
+    root: path.resolve(__dirname, '..', 'lib'),
   },
 };

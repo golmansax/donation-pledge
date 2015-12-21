@@ -55,5 +55,5 @@ module.exports = {
 
   stylus: sharedConfig.stylus,
 
-  resolve: { alias: sharedConfig.resolve.alias },
+  resolve: sharedConfig.resolve,
 };

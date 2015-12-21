@@ -49,4 +49,8 @@ module.exports = {
   ],
 
   stylus: sharedConfig.stylus,
+
+  resolve: {
+    root: sharedConfig.resolve.root,
+  },
 };

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PLEDGERS from '_data/pledgers';
 import { Button, Container, H1, H2 } from '../../base/components';
 import { scrollTo } from '../../shared_state/scroll_to/actions';
 import { registerScrollTarget } from '../../shared_state/scroll_to/store';
@@ -46,7 +47,10 @@ export default class HomePageContent extends Component {
             <H1 type='secondary' className={styles.sectionHeading}>
               See what others are pledging
             </H1>
-            <Pledge />
+            <Pledge
+              pledge={PLEDGERS.golmansax.pledges[0]}
+              pledger={PLEDGERS.golmansax}
+            />
           </Container>
         </div>
 
