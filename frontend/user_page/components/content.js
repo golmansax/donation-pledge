@@ -12,7 +12,7 @@ const UserPageContent = () => (
     </div>
     <Container>
       <H1 type='secondary' className={styles.heading}>
-        Holman&rsquo;s Impact Pledge
+        Holman Gao&rsquo;s Impact Pledge
       </H1>
     </Container>
     <div className={styles.section}>

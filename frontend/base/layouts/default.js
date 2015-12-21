@@ -7,11 +7,19 @@ import './default.styl';
 const getCssFile = (name) => getAsset(`${name}.css`);
 const getJsFile = (name) => getAsset(`${name}.js`);
 
+const getTitle = ({ title }) => {
+  if (!title) {
+    return 'My Impact Pledge – Pledge to Make a Recurring Impact';
+  }
+
+  return `${title} | My Impact Pledge`;
+};
+
 const DefaultLayout = ({ children, title, name }) => (
   /* eslint-disable max-len */
   <html>
     <head>
-      <title>{title}</title>
+      <title>{getTitle({ title })}</title>
       <link
         type='text/css'
         rel='stylesheet'
