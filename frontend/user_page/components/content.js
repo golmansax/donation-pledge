@@ -1,4 +1,4 @@
-import { Container, H1 } from '../../base/components';
+import { Container, A, H1 } from '../../base/components';
 import { BrandLogo } from '../../brand/components';
 import { Pledge } from '../../pledge/components';
 import styles from './content.styl';
@@ -8,6 +8,9 @@ const UserPageContent = () => (
     <div className={styles.navbar}>
       <Container>
         <BrandLogo className={styles.navbarLogo} />
+        <A className={styles.navbarLink} design='inherit' href='/log-in'>
+          Log In
+        </A>
       </Container>
     </div>
     <Container>

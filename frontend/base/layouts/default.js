@@ -62,7 +62,7 @@ const DefaultLayout = ({ children, title, name }) => (
 DefaultLayout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default DefaultLayout;

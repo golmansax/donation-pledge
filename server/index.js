@@ -5,30 +5,23 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import nodemailer from 'nodemailer';
 import mailgunTransport from 'nodemailer-mailgun-transport';
-import {
-  DEFAULT_EMAIL,
-  MAILGUN_API_KEY,
-  MAILGUN_DOMAIN,
-  isDevelopment,
-} from './config';
+import { DEFAULT_EMAIL, MAILGUN_API_KEY, MAILGUN_DOMAIN } from './config';
 import webpackAssets from '../webpack/assets';
-import HomePage from '../webpack/build/home_page.server_entry';
-import UserPage from '../webpack/build/user_page.server_entry';
+import {
+  HomeRouteHandler,
+  UserRouteHandler,
+  LoginRouteHandler
+} from './route_handlers';
+import { logError, sendErrorToClient } from './error_handlers';
 
 const server = express();
 
 server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
 server.use(bodyParser.urlencoded({ extended: false }));
 
-server.get('/', (req, res) => {
-  const page = renderToStaticMarkup(<HomePage assets={webpackAssets} />);
-  res.send(`<!DOCTYPE html>${page}`);
-});
-
-server.get('/pledgers/golmansax', (req, res) => {
-  const page = renderToStaticMarkup(<UserPage assets={webpackAssets} />);
-  res.send(`<!DOCTYPE html>${page}`);
-});
+server.get('/', HomeRouteHandler);
+server.get('/pledgers/golmansax', UserRouteHandler);
+server.get('/log-in', LoginRouteHandler);
 
 server.post('/contacts', (req, res, next) => {
   const transporter = nodemailer.createTransport(mailgunTransport({
@@ -52,16 +45,7 @@ server.post('/contacts', (req, res, next) => {
   });
 });
 
-server.use((err, req, res, next) => {
-  console.error(err.stack); // eslint-disable-line no-console
-  next(err);
-});
-
-server.use((err, req, res, next) => {
-  if (res.headersSent) { return next(err); }
-
-  if (isDevelopment()) { Reflect.deleteProperty(err, 'stack'); }
-  res.status(err.statusCode || 500).json({ error: err.message });
-});
+server.use(logError);
+server.use(sendErrorToClient);
 
 export default server;
