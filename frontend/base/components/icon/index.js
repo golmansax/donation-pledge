@@ -19,7 +19,7 @@ Icon.defaultProps = { size: '1x' };
 Icon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.string.isRequired,
-  size: PropTypes.oneOf(['1x', '2x']),
+  size: PropTypes.oneOf(['1x', '2x', '3x', '4x']),
 };
 
 export default Icon;

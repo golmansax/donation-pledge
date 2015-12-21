@@ -1,32 +1,25 @@
-@require '_frontend/styles/grid'
 @require '_frontend/styles/colors'
+@require '_frontend/styles/grid'
 @require '_frontend/styles/spacing'
 
-.heading {
-  margin $spacing1x 0
+.form {
+  col(1/2, offset: 1/4)
+  background-color $white
+  border-radius 5px
+  margin-top $spacing2x
+  margin-bottom $spacing2x
+  padding $spacing2x
 }
 
 .section {
-  padding-bottom $spacing3x
+  margin-bottom $spacing1x
 }
 
-.navbar {
-  background-color $mainColor
-  color $white
-}
-
-.navbarItem {
-  display inline-block
-  margin $spacingHalf 0
-}
-
-.navbarLink {
-  composes navbarItem
-  float right
-}
-
-.navbarLogo {
-  composes navbarItem
-  float left
+.input {
+  border 1px solid $kindaLightGray
+  box-sizing border-box
+  color $darkGray
+  padding $spacingHalf
+  width 100%
 }
 
