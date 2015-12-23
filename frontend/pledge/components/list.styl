@@ -2,18 +2,25 @@
 @require nib
 @require '_frontend/styles/colors'
 
-.rootElement {
+.pledgeList {
+  clearfix()
+
   background $white
   border $lightGray .1em solid
   border-radius .5em
   padding 2em
 }
 
+.pledgeContainer {
+  col(3/4)
+}
+
 .pledge {
-  font-size 1.3em
-  padding-bottom 2em
-  text-align center
-  margin-bottom .5em
+  clearfix()
+}
+
+.pledgeItem {
+  col(1/2)
 }
 
 .userImage {
@@ -28,16 +35,4 @@
 .userImageContainer {
   col(1/4)
   text-align center
-}
-
-.container {
-  clearfix()
-}
-
-.otherContainer {
-  col(3/4)
-}
-
-.section {
-  margin-bottom 1em
 }

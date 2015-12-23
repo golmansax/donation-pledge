@@ -3,11 +3,18 @@ import PLEDGERS from '_data/pledgers';
 import { Button, Container, H1, H2 } from '../../base/components';
 import { scrollTo } from '../../shared_state/scroll_to/actions';
 import { registerScrollTarget } from '../../shared_state/scroll_to/store';
-import { Pledge } from '../../pledge/components';
+import { PledgeList } from '../../pledge/components';
 import { ContactForm } from '../../contact/components';
 import { alert } from '../../shared_state/popup/actions';
 import Mission from './mission';
 import styles from './content.styl';
+
+const PLEDGES = [
+  {
+    pledge: PLEDGERS.golmansax.pledges[0],
+    pledger: PLEDGERS.golmansax,
+  },
+];
 
 export default class HomePageContent extends Component {
   componentDidMount() {
@@ -47,10 +54,7 @@ export default class HomePageContent extends Component {
             <H1 type='secondary' className={styles.sectionHeading}>
               See what others are pledging
             </H1>
-            <Pledge
-              pledge={PLEDGERS.golmansax.pledges[0]}
-              pledger={PLEDGERS.golmansax}
-            />
+            <PledgeList pledges={PLEDGES} />
           </Container>
         </div>
 
