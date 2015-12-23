@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 import path from 'path';
-import { isProduction } from '../server/config';
+import { isDevelopment, isProduction } from '../server/config';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer-stylus';
 import jeet from 'jeet';
@@ -9,7 +9,7 @@ import nib from 'nib';
 import rupture from 'rupture';
 
 module.exports = {
-  devtool: 'eval',
+  devtool: isDevelopment() ? 'eval' : null,
 
   output: {
     path: path.resolve(__dirname, 'build'),
