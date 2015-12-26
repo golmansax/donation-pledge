@@ -1,12 +1,14 @@
-@require '_frontend/styles/grid'
-@require nib
 @require '_frontend/styles/colors'
+@require '_frontend/styles/fonts'
+@require '_frontend/styles/grid'
+@require '_frontend/styles/spacing'
+@require nib
 
 .pledgeList {
   clearfix()
 
   background $white
-  border $lightGray .1em solid
+  border .1em solid $lightGray
   border-radius .5em
   padding 2em
 }
@@ -17,10 +19,27 @@
 
 .pledge {
   clearfix()
+  border .1em solid $lightGray
+  border-radius .5em
+  margin $spacing1x 0
 }
 
 .pledgeItem {
-  col(1/2)
+  col(1/2, gutter: 0)
+  padding $spacingHalf
+
+  &:first-child {
+    border-right .1em solid $lightGray
+  }
+}
+
+.pledgeItemHeading {
+  color $gray
+}
+
+.pledgeItemContent {
+  color $mainColor
+  font-family $serifFontFamily
 }
 
 .userImage {

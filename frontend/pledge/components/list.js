@@ -17,20 +17,24 @@ const renderPledge = ({ pledge, pledger }) => (
       <div className={styles.userImage} style={getImageStyle(pledger)} />
     </div>
     <div className={styles.pledgeContainer}>
-      <H2 type='secondary'>{pledger.fullName}</H2>
+      <H2 type='secondary'>{pledger.fullName}&rsquo;s Impact Pledge</H2>
       <div className={styles.pledge}>
         <div className={styles.pledgeItem}>
-          <H3>Impact</H3>
-          <H3 type='secondary'>{pledge.impact}</H3>
+          <H3 className={styles.pledgeItemHeading}>Impact</H3>
+          <H3 type='secondary' className={styles.pledgeItemContent}>
+            {pledge.impact}
+          </H3>
         </div>
         <div className={styles.pledgeItem}>
-          <H3>How often?</H3>
-          <H3 type='secondary'>every {pledge.howOften}</H3>
+          <H3 className={styles.pledgeItemHeading}>How often?</H3>
+          <H3 type='secondary' className={styles.pledgeItemContent}>
+            every {pledge.howOften}
+          </H3>
         </div>
       </div>
       <div>
         <A href={`/pledgers/${pledger.id}`}>
-          Read more about {pledger.firstName}&rsquo;s pledge
+          Read more about {pledger.firstName} is fulfilling the pledge
         </A>
       </div>
     </div>
