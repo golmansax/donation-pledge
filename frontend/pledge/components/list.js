@@ -1,8 +1,6 @@
 import { PropTypes } from 'react';
 import { A, H2, H3 } from '../../base/components';
 import { getPledgerImage } from '../../pledgers/images/store';
-import Pledge from './pledge';
-import SignedText from './signed_text';
 import styles from './list.styl';
 
 const getImageStyle = (pledger) => {

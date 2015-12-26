@@ -9,7 +9,7 @@ import nib from 'nib';
 import rupture from 'rupture';
 
 module.exports = {
-  // devtool: isDevelopment() ? 'eval' : null,
+  devtool: isDevelopment() ? 'eval' : null,
 
   output: {
     path: path.resolve(__dirname, 'build'),
