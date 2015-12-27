@@ -29,7 +29,7 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          plugins: ['transform-object-assign', "transform-runtime"],
+          plugins: ['transform-object-assign', 'transform-runtime'],
         },
       },
     ].concat(sharedConfig.module.loaders),
