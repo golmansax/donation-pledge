@@ -5,7 +5,6 @@ env:
 install:
 - npm install
 - NODE_ENV=development npm install --only=dev
-- NODE_ENV=development npm install babel-eslint
 script:
 - travis-lint .travis.yml
 - make eslint
