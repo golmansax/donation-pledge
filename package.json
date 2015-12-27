@@ -13,7 +13,7 @@
   "main": "server/entry.js",
   "devDependencies": {
     "arrow-mocha": "*",
-    "babel-eslint": "5.0.0-beta4",
+    "babel-eslint": "5.0.0-beta6",
     "dotenv": "*",
     "chai": "*",
     "dirty-chai": "*",
