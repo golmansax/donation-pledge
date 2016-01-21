@@ -14,6 +14,7 @@ import { logError, handle500 } from './error_handlers';
 const server = express();
 
 server.use(express.static(path.resolve(__dirname, '..', 'webpack', 'build')));
+server.use(express.static(path.resolve(__dirname, 'static')));
 server.use(bodyParser.urlencoded({ extended: false }));
 
 server.get('/', HomeRouteHandler);
