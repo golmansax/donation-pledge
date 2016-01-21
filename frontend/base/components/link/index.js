@@ -1,5 +1,6 @@
 import { PropTypes } from 'react';
 import classNames from 'classnames';
+import { childrenPropType } from '_frontend/prop_types';
 import styles from './link.styl';
 
 const getClass = ({ className, design }) => {
@@ -19,11 +20,7 @@ Link.defaultProps = {
 };
 
 Link.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: childrenPropType,
   className: PropTypes.string,
   design: PropTypes.oneOf(['main', 'inherit']).isRequired,
 };

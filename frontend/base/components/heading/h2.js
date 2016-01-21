@@ -1,4 +1,5 @@
 import { PropTypes } from 'react';
+import { childrenPropType } from '_frontend/prop_types';
 import Heading from './heading';
 
 const H2 = ({ children, ...otherProps }) => (
@@ -6,11 +7,7 @@ const H2 = ({ children, ...otherProps }) => (
 );
 
 H2.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: childrenPropType,
   className: PropTypes.string,
 };
 

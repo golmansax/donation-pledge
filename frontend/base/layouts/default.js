@@ -1,4 +1,5 @@
 import { PropTypes } from 'react';
+import { childrenPropType } from '_frontend/prop_types';
 import favicon from './favicon.png';
 import { getAsset } from '../../shared_state/asset_store';
 import { PopupBackdrop } from '../../shared_state/popup/components';
@@ -66,7 +67,7 @@ const DefaultLayout = ({ children, title, name, description }) => (
 );
 
 DefaultLayout.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: childrenPropType.isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
 };

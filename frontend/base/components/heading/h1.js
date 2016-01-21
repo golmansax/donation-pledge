@@ -1,4 +1,5 @@
 import { Component, PropTypes } from 'react';
+import { childrenPropType } from '_frontend/prop_types';
 import Heading from './heading';
 
 export default class H1 extends Component {
@@ -8,10 +9,6 @@ export default class H1 extends Component {
 }
 
 H1.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: childrenPropType,
   className: PropTypes.string,
 };

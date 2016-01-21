@@ -1,5 +1,6 @@
 import { Component, PropTypes } from 'react';
 import classNames from 'classnames';
+import { childrenPropType } from '_frontend/prop_types';
 import styles from './heading.styl';
 
 export default class Heading extends Component {
@@ -21,11 +22,7 @@ export default class Heading extends Component {
 Heading.defaultProps = { type: 'main' };
 
 Heading.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.element),
-  ]).isRequired,
+  children: childrenPropType,
   className: PropTypes.string,
   size: PropTypes.oneOf(['h1', 'h2', 'h3']),
   type: PropTypes.oneOf(['main', 'secondary']),

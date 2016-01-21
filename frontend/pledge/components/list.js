@@ -10,7 +10,7 @@ const getImageStyle = (pledger) => {
 };
 
 const renderPledge = ({ pledge, pledger }) => (
-  <div className={styles.pledgeList}>
+  <div className={styles.pledgeList} key={pledger.id}>
     <div className={styles.userImageContainer}>
       <div className={styles.userImage} style={getImageStyle(pledger)} />
     </div>
