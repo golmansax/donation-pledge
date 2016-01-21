@@ -24,7 +24,7 @@ export default class ContactForm extends Component {
             className={styles.input}
             type='text'
             value={this.state.name}
-            onChange={this._updateState.bind(this, 'name')}
+            onChange={this._updateName}
           />
         </div>
         <div className={styles.section}>
@@ -33,7 +33,7 @@ export default class ContactForm extends Component {
             className={styles.input}
             type='text'
             value={this.state.email}
-            onChange={this._updateState.bind(this, 'email')}
+            onChange={this._updateEmail}
           />
         </div>
         <div className={styles.section}>
@@ -41,23 +41,26 @@ export default class ContactForm extends Component {
           <textarea
             className={styles.textarea}
             value={this.state.comment}
-            onChange={this._updateState.bind(this, 'comment')}
+            onChange={this._updateComment}
             rows={4}
             placeholder='e.g. Awesome Idea!'
           />
         </div>
-        <Button onClick={this._submitForm.bind(this)} type='outline'>
+        <Button onClick={this._submitForm} type='outline'>
           Send!
         </Button>
       </div>
     );
   }
 
-  _updateState(attr, event) {
+  _updateState = (attr, event) => {
     this.setState({ [attr]: event.target.value });
-  }
+  };
+  _updateName = this._updateState.bind(this, 'name');
+  _updateEmail = this._updateState.bind(this, 'email');
+  _updateComment = this._updateState.bind(this, 'comment');
 
-  _submitForm(event) {
+  _submitForm = (event) => {
     const errorMessage = this._validateState();
     if (errorMessage) {
       alert(errorMessage);
@@ -77,7 +80,7 @@ export default class ContactForm extends Component {
         );
       }
     );
-  }
+  };
 
   _validateState() {
     let message = null;
