@@ -30,7 +30,7 @@ const renderPledge = ({ pledge, pledger }) => (
       </div>
       <div>
         <A href={`/pledgers/${pledger.id}`}>
-          Read more about {pledger.firstName} is fulfilling the pledge
+          Read more about how {pledger.firstName} is fulfilling the pledge
         </A>
       </div>
     </div>
