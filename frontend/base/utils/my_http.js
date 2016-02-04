@@ -7,19 +7,17 @@ if (onClient) {
   request = () => null;
 }
 
-export const post = (options) => {
-  return new Promise((resolve, reject) => {
-    request.post(options.url)
-      .type('form')
-      .send(options.data)
-      .end((err, res) => {
-        if (err) {
-          const { error } = res;
-          error.message = res.body.error || error.message;
-          reject(error);
-        } else {
-          resolve(res.body);
-        }
-      });
-  });
-};
+export const post = (options) => new Promise((resolve, reject) => {
+  request.post(options.url)
+    .type('form')
+    .send(options.data)
+    .end((err, res) => {
+      if (err) {
+        const { error } = res;
+        error.message = res.body.error || error.message;
+        reject(error);
+      } else {
+        resolve(res.body);
+      }
+    });
+});

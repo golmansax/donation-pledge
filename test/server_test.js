@@ -14,16 +14,24 @@ describe('server', function () {
   beforeEach(() => {
     const port = 3001;
     this.server = server.listen(port);
-    this.browser = new Browser({ site: 'http://localhost:' + port });
-    return this.browser.visit('/');
+    this.browser = new Browser({ site: `http://localhost:${port}` });
   });
 
   afterEach(() => {
     this.server.close();
   });
 
-  it('routes root page to portfolio', () => {
-    expect(this.browser.text('title')).to.include('My Impact Pledge –');
-    expect(this.browser.text('body')).to.include('Whatimpactwill you make?');
-  });
+  it('renders home page', () => (
+    this.browser.visit('/').then(() => {
+      expect(this.browser.text('title')).to.include('My Impact Pledge –');
+      expect(this.browser.text('body')).to.include('Whatimpactwill you make?');
+    })
+  ));
+
+  it('renders pledger page', () => (
+    this.browser.visit('/pledgers/golmansax').then(() => {
+      expect(this.browser.text('title')).to.include('Holman Gao’s Impact');
+      expect(this.browser.text('body')).to.include('donate to youth education');
+    })
+  ));
 });

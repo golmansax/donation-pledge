@@ -3,11 +3,9 @@ import { A, H2, H3 } from '../../base/components';
 import { getPledgerImage } from '../../pledgers/images/store';
 import styles from './list.styl';
 
-const getImageStyle = (pledger) => {
-  return {
-    backgroundImage: `url(${getPledgerImage(pledger.id)})`,
-  };
-};
+const getImageStyle = (pledger) => ({
+  backgroundImage: `url(${getPledgerImage(pledger.id)})`,
+});
 
 const renderPledge = ({ pledge, pledger }) => (
   <div className={styles.pledgeList} key={pledger.id}>

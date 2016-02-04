@@ -2,13 +2,11 @@ import { PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './icon.styl';
 
-const getClass = ({ name, size, className }) => {
-  return classNames({
-    [`lnr lnr-${name}`]: true,
-    [styles[`size${size}`]]: true,
-    [className]: !!className,
-  });
-};
+const getClass = ({ name, size, className }) => classNames({
+  [`lnr lnr-${name}`]: true,
+  [styles[`size${size}`]]: true,
+  [className]: !!className,
+});
 
 const Icon = ({ name, size, className }) => (
   <span className={getClass({ name, size, className })} />

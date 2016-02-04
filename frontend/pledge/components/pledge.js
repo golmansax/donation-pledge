@@ -5,11 +5,9 @@ import { DonationList } from '../../donation/components';
 import { getPledgerImage } from '../../pledgers/images/store';
 import styles from './pledge.styl';
 
-const getImageStyle = (pledger) => {
-  return {
-    backgroundImage: `url(${getPledgerImage(pledger.id)})`,
-  };
-};
+const getImageStyle = (pledger) => ({
+  backgroundImage: `url(${getPledgerImage(pledger.id)})`,
+});
 
 const Pledge = ({ pledge, pledger }) => (
   <div className={styles.rootElement}>
