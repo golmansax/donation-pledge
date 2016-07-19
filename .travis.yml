@@ -15,6 +15,7 @@ env:
   - NODE_ENV=production CXX=g++-4.8
 
 install:
+  - npm install -g npm
   - npm install
   - NODE_ENV=development npm install --only=dev
 
