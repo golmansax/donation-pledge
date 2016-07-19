@@ -4,8 +4,11 @@
 
 .rootElement {
   background $white
-  border-radius .5em
   padding 2em
+
+  +desktop() {
+    border-radius .5em
+  }
 }
 
 .pledge {

@@ -13,7 +13,7 @@ const UserPageContent = ({ pledger }) => (
       </H1>
     </Container>
     <div className={styles.section}>
-      <Container>
+      <Container mobilePadding={false}>
         <Pledge pledger={pledger} pledge={pledger.pledges[0]} />
       </Container>
     </div>

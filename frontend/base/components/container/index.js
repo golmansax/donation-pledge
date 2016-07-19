@@ -2,13 +2,14 @@ import { PropTypes } from 'react';
 import classNames from 'classnames';
 import styles from './container.styl';
 
-const getClass = ({ className }) => classNames({
+const getClass = ({ className, mobilePadding }) => classNames({
   [styles.rootElement]: true,
+  [styles.noMobilePadding]: !mobilePadding,
   [className]: !!className,
 });
 
-const Container = ({ className, children }) => (
-  <div className={getClass({ className })}>{children}</div>
+const Container = ({ className, children, mobilePadding }) => (
+  <div className={getClass({ className, mobilePadding })}>{children}</div>
 );
 
 Container.propTypes = {
@@ -18,6 +19,11 @@ Container.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   className: PropTypes.string,
+  mobilePadding: PropTypes.bool,
+};
+
+Container.defaultProps = {
+  mobilePadding: true,
 };
 
 export default Container;
