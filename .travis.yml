@@ -11,8 +11,8 @@ addons:
     - g++-4.8
 
 env:
-  - NODE_ENV=production
-  - CXX=g++-4.8 # This is for https://github.com/travis-ci/travis-ci/issues/4771
+  # CXX is for https://github.com/travis-ci/travis-ci/issues/4771
+  - NODE_ENV=production CXX=g++-4.8
 
 install:
   - npm install
