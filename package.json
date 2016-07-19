@@ -61,6 +61,7 @@
     "react-dom": "*",
     "rupture": "*",
     "style-loader": "*",
+    "stylus": "*",
     "stylus-loader": "*",
     "superagent": "*",
     "transform-loader": "*",
