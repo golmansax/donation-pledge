@@ -3,7 +3,19 @@
 @require '_frontend/styles/spacing'
 
 .form {
-  col(1/2, offset: 1/4)
+  +desktop() {
+    col(1/2, offset: 1/4)
+  }
+
+  +tablet() {
+    margin-right $spacing2x
+    margin-left $spacing2x
+  }
+
+  +mobile() {
+    border-radius 0
+  }
+
   background-color $white
   border-radius 5px
   margin-top $spacing2x
