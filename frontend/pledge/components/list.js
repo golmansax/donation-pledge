@@ -7,7 +7,7 @@ const getImageStyle = (pledger) => ({
   backgroundImage: `url(${getPledgerImage(pledger.id)})`,
 });
 
-const renderPledge = ({ pledge, pledger }) => (
+const PledgeListItem = ({ pledge, pledger }) => (
   <div className={styles.pledgeList} key={pledger.id}>
     <div className={styles.userImageContainer}>
       <div className={styles.userImage} style={getImageStyle(pledger)} />
@@ -37,7 +37,18 @@ const renderPledge = ({ pledge, pledger }) => (
   </div>
 );
 
-const PledgeList = ({ pledges }) => <div>{pledges.map(renderPledge)}</div>;
+PledgeListItem.propTypes = {
+  pledge: PropTypes.object.isRequired,
+  pledger: PropTypes.object.isRequired,
+};
+
+const PledgeList = ({ pledges }) => (
+  <div>
+    {pledges.map(({ pledger, pledge }) => (
+      <PledgeListItem pledger={pledger} pledge={pledge} key={pledger.id} />
+    ))}
+  </div>
+);
 
 PledgeList.propTypes = {
   pledges: PropTypes.array.isRequired,

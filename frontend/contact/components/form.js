@@ -69,7 +69,9 @@ export default class ContactForm extends Component {
     }
 
     const data = {};
-    ['name', 'email', 'comment'].forEach((key) => data[key] = this.state[key]);
+    ['name', 'email', 'comment'].forEach((key) => (
+      data[key] = this.state[key]
+    ));
 
     create(data).then(
       () => alert('Your email has been sent!'),

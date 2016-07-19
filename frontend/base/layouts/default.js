@@ -68,6 +68,7 @@ const DefaultLayout = ({ children, title, name, description }) => (
 
 DefaultLayout.propTypes = {
   children: childrenPropType.isRequired,
+  description: PropTypes.string,
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
 };

@@ -1,23 +1,21 @@
-import { Component, PropTypes } from 'react';
+import { PropTypes } from 'react';
 import classNames from 'classnames';
 import { childrenPropType } from '_frontend/prop_types';
 import styles from './heading.styl';
 
-export default class Heading extends Component {
-  render() {
-    const myClassName = classNames({
-      [styles[this.props.size]]: true,
-      [styles[this.props.type]]: true,
-      [this.props.className]: !!this.props.className,
-    });
+const Heading = ({ size, type, className, children }) => {
+  const myClassName = classNames({
+    [styles[size]]: true,
+    [styles[type]]: true,
+    [className]: !!className,
+  });
 
-    return (
-      <div className={myClassName}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+  return (
+    <div className={myClassName}>
+      {children}
+    </div>
+  );
+};
 
 Heading.defaultProps = { type: 'main' };
 
@@ -27,3 +25,5 @@ Heading.propTypes = {
   size: PropTypes.oneOf(['h1', 'h2', 'h3']),
   type: PropTypes.oneOf(['main', 'secondary']),
 };
+
+export default Heading;

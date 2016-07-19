@@ -21,7 +21,7 @@ const REASONS = [
   },
 ];
 
-const _renderReason = (reason, index) => (
+const renderReason = (reason, index) => (
   <div className={styles.reason} key={index}>
     <Icon className={styles.reasonIcon} name={reason.icon} />
     <H2 type='secondary'>{reason.heading}</H2>
@@ -33,11 +33,11 @@ const Mission = () => ( // eslint-disable-line react/no-multi-comp
   <Container>
     <div className={styles.pledgeColumn}>
       <div className={styles.align}>
-      <div id='pledge-banner'><PledgeBanner /></div>
-    </div>
+        <div id='pledge-banner'><PledgeBanner /></div>
+      </div>
     </div>
     <div className={styles.reasonColumn}>
-      {REASONS.map(_renderReason)}
+      {REASONS.map(renderReason)}
     </div>
   </Container>
 );

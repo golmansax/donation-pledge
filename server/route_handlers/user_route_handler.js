@@ -6,7 +6,8 @@ import { handle404 } from '../error_handlers';
 
 const UserRouteHandler = (req, res) => {
   if (!PLEDGERS.hasOwnProperty(req.params.id)) {
-    return handle404(req, res);
+    handle404(req, res);
+    return;
   }
 
   const page = renderToStaticMarkup(
