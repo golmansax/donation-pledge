@@ -6,23 +6,24 @@ node_js: 6
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
   packages:
-  - g++-4.8
+    - g++-4.8
 
 env:
-- NODE_ENV=production
-# Following is for https://github.com/travis-ci/travis-ci/issues/4771
-- CXX=g++-4.8
+  - NODE_ENV=production
+  - CXX=g++-4.8 # This is for https://github.com/travis-ci/travis-ci/issues/4771
 
 install:
-- npm install
-- NODE_ENV=development npm install --only=dev
+  - npm install
+  - NODE_ENV=development npm install --only=dev
+
 script:
-- travis-lint .travis.yml
-- make eslint
-- make stylint
-- make test
+  - travis-lint .travis.yml
+  - make eslint
+  - make stylint
+  - make test
+
 deploy:
   provider: heroku
   strategy: git
