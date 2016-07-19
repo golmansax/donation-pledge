@@ -1,8 +1,20 @@
 sudo: false
 language: node_js
 node_js: 6
+
+# Following is for https://github.com/travis-ci/travis-ci/issues/4771
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+  packages:
+  - g++-4.8
+
 env:
 - NODE_ENV=production
+# Following is for https://github.com/travis-ci/travis-ci/issues/4771
+- CXX=g++-4.8
+
 install:
 - npm install
 - NODE_ENV=development npm install --only=dev
