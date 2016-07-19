@@ -20,13 +20,16 @@
 .year {
   composes heading
 
-  col(1/8)
-
-  text-align center
+  +above(rupture.mobile-cutoff) {
+    col(1/8)
+    text-align center
+  }
 }
 
 .content {
-  col(7/8)
+  +above(rupture.mobile-cutoff) {
+    col(7/8)
+  }
 }
 
 .action {

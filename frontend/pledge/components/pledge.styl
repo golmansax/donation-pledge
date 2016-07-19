@@ -28,8 +28,11 @@
 }
 
 .userImageContainer {
-  col(1/4)
   text-align center
+
+  +above(rupture.mobile-cutoff) {
+    col(1/4)
+  }
 }
 
 .container {
@@ -37,7 +40,13 @@
 }
 
 .otherContainer {
-  col(3/4)
+  +above(rupture.mobile-cutoff) {
+    col(3/4)
+  }
+
+  +mobile() {
+    padding-top 2em
+  }
 }
 
 .section {
