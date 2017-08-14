@@ -24,7 +24,6 @@ install:
   - yarn install --production=false
 
 script:
-  - travis-lint .travis.yml
   #- make eslint
   - make stylint
   #- make test
