@@ -2,6 +2,11 @@ sudo: false
 language: node_js
 node_js: 6
 
+cache:
+  yarn: true
+  directories:
+    - node_modules # NPM packages
+
 # Following is for https://github.com/travis-ci/travis-ci/issues/4771
 addons:
   apt:
@@ -16,9 +21,7 @@ env:
   - NODE_ENV=production CXX=g++-4.8 CC=gcc-4.8
 
 install:
-  - npm install -g npm
-  - npm install
-  - NODE_ENV=development npm install --only=dev
+  - yarn install --production=false
 
 script:
   - travis-lint .travis.yml
